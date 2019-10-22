@@ -1,0 +1,4 @@
+name: SAGI Report
+description: >
+ Template for creating SAGI reports in Rmarkdown.
+create_dir: true

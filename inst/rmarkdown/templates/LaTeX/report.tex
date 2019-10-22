@@ -1,0 +1,107 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+\documentclass[oneside,12pt]{book}
+
+\usepackage{SAGI3}
+
+\begin{document}
+
+\frontmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start titlepage
+
+\thispagestyle{empty}
+\vspace*{25mm}
+\begin{flushright}
+\HRule\\[5mm]
+
+%%% logos go here ...
+
+\begin{tabular}{rrrr}
+\includegraphics[height = 1.5cm]{UoA}  &
+\includegraphics[height = 2.0cm]{GRDC} &
+\includegraphics[height = 2.0cm]{SARDI} &
+\includegraphics[height = 1.5cm]{SAGI-STH}
+\end{tabular}\\[5mm]
+
+\huge
+\textcolor{blue}{\sbf Statistics for the Australian\\
+Grains Industry (Southern Region)\\ Technical Report Series: SS001} \\[6mm]
+
+{\sbf Informative report title}\\
+\Large
+\vspace{2mm}{\sbf Report for UA000001}\\[5mm]
+
+\sf\normalsize
+Julian Taylor\\
+Senior Biometrician, SAGI-STH\\
+PMB 1 Glen Osmond 5064\\
+email: julian.taylor@adelaide.edu.au\\[8mm]
+
+\today\\
+\HRule
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end titlepage
+
+\clearpage
+\pagestyle{plain}
+\setcounter{page}{1}
+\tableofcontents
+
+%% other lists of tables or figures
+
+%\listoftables
+%\addcontentsline{toc}{chapter}{List of Tables}
+%\listoffigures
+%\addcontentsline{toc}{chapter}{List of Figures}
+\clearpage
+
+\section*{Executive Summary}
+\addcontentsline{toc}{section}{Executive summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Start document
+
+\mainmatter
+\pagestyle{fancy}
+
+%%%%%%%%%%%% Book class
+
+\chapter{Chapter 1}
+
+\section{This is a section heading}
+
+\subsection{This is a subsection heading}
+
+\subsubsection{This is a subsubsection heading}
+
+\chapter{Next Chapter}
+
+This shows a smooth transition to the next chapter.
+
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{biom}
+\bibliography{references}
+
+%%%%%%%%%%%% Article class
+
+% \section{This is a section heading}
+
+% \subsection{This is a subsection heading}
+
+% \subsubsection{This is a subsubsection heading}
+
+% \section{Next section heading}
+
+% This shows a smooth transition to the next chapter.
+
+% \addcontentsline{toc}{section}{References}
+% \bibliographystyle{biom}
+% \bibliography{references}
+
+%%%%%%%%%%%%
+
+\end{document}

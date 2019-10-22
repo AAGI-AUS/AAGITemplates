@@ -1,0 +1,84 @@
+\documentclass[oneside,12pt]{book}
+\usepackage[knit]{SAGI3}
+\usepackage{lmodern}
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+\setcounter{secnumdepth}{2}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+
+\usepackage{bbm}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start titlepage
+
+\thispagestyle{empty}
+\vspace*{30mm}
+\begin{flushright}
+\HRule\\[5mm]
+
+%%% logos go here ...
+
+\begin{tabular}{rrrr}
+\includegraphics[height = 1.5cm]{UoA}  &
+\includegraphics[height = 2.0cm]{GRDC} &
+\includegraphics[height = 2.0cm]{SARDI} &
+\includegraphics[height = 1.5cm]{SAGI-STH}
+\end{tabular}\\[5mm]
+
+\huge
+\textcolor{blue}{\sbf Statistics for the Australian\\
+Grains Industry (Southern Region)\\ Technical Report Series: SS001}\\[6mm]
+
+{\sbf Informative title for report}\\
+\Large
+\vspace{2mm}{\sbf Report for UA000001}\\[5mm]
+
+\sf\normalsize
+Sam Rogers\\
+email:\;\href{mailto:s.rogers@adelaide.edu.au}{\nolinkurl{s.rogers@adelaide.edu.au}}\\[8mm]
+
+\today\\
+\HRule
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end titlepage
+
+\clearpage
+\frontmatter
+\pagestyle{plain}
+\setcounter{page}{1}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\clearpage
+\section*{Executive summary}\label{executive-summary}
+\addcontentsline{toc}{section}{Executive summary}
+
+\mainmatter
+\pagestyle{fancy}
+
+\chapter{Chapter 1}\label{chapter-1}
+
+\section{This is a section heading}\label{this-is-a-section-heading}
+
+\subsection{This is a subsection
+heading}\label{this-is-a-subsection-heading}
+
+\subsubsection{This is a subsubsection
+heading}\label{this-is-a-subsubsection-heading}
+
+\chapter{Next Chapter}\label{next-chapter}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+\end{document}

@@ -1,0 +1,65 @@
+---
+#Report details
+report-number: "SS001"
+title: "Informative title for report"
+subtitle: "Report for UA000001"
+author: "Sam Rogers"
+job-title: 
+address: 
+email: "s.rogers@adelaide.edu.au"
+
+
+#Latex options
+documentclass: article
+classoption:
+  - oneside
+  - 12pt
+header-includes:
+  - \usepackage{bbm}
+knit: yes
+number-sections: yes
+toc: yes
+bibliography: references.bib
+csl: biometrics.csl
+link-citations: true
+output:
+  pdf_document:
+    keep_tex: yes
+    latex_engine: pdflatex
+    template: SAGI_markdown.tex
+---
+
+```{r knitr_options, include=FALSE}
+library(rmarkdown)
+library(xtable)
+source("initialize.R")
+```
+
+## Executive summary {-}
+
+\mainmatter
+\pagestyle{fancy}
+
+<!-- article class-->
+
+# Section 1
+
+## This is a subection heading
+
+Example R code
+
+```{r example1}
+plot(pressure)
+```
+
+
+### This is a subsubsection heading
+
+# Next Section
+
+
+\newpage
+# References {-}
+
+
+

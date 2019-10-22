@@ -1,0 +1,4 @@
+name: SAGI Report with chapters
+description: >
+ Template for creating SAGI reports with chapters in Rmarkdown.
+create_dir: true
