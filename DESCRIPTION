@@ -1,4 +1,4 @@
-Package: SAGI_Templates
+Package: SAGITemplates
 Type: Package
 Title: Add SAGI Templates to `New Rmarkdown` Window
 Version: 0.1.3
