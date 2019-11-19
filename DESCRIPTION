@@ -1,14 +1,15 @@
 Package: SAGITemplates
 Type: Package
 Title: Add SAGI Templates to `New Rmarkdown` Window
-Version: 0.1.3
+Version: 0.1.4
 Authors@R: c(
     person("Sam", "Rogers", email = "s.rogers@adelaide.edu.au", role = "aut"),
     person("Julian", "Taylor", email = "julian.taylor@adelaide.edu.au", role = "cre"))
 Description: Clicking the RStudio New Rmarkdown button shows a window
-    where one can select from Rmarkdown templates. This package adds
+    where various Rmarkdown templates can be selected. This package adds
 	  SAGI-III reporting templates in this window as an easy way to 
-	  add required template files when creating a new report.
+	  add required template files such as logos, styling and initialisation scripts 
+	  when creating a new report.
 Imports: rmarkdown, knitr
 License: MIT + file LICENSE
 Encoding: UTF-8
