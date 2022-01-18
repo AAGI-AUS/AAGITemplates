@@ -41,7 +41,7 @@
 \usepackage{longtable}
 \usepackage{rotating}
 \usepackage{titlesec}
-\usepackage[titles]{tocloft}
+\usepackage{tocloft}
 \usepackage{parskip}
 \usepackage{setspace}
 
@@ -77,9 +77,9 @@
 
 %% chapter and section head changes
 
-\titlespacing*{\section}{0pt}{0pt}{-0.20ex}
-\titlespacing*{\subsection}{0pt}{0pt}{-0.20ex}
-\titlespacing*{\subsubsection}{0pt}{0pt}{-0.20ex}
+% \titlespacing*{\section}{0pt}{0pt}{-0.20ex}
+% \titlespacing*{\subsection}{0pt}{0pt}{-0.20ex}
+% \titlespacing*{\subsubsection}{0pt}{0pt}{-0.20ex}
 
 \titleformat*{\section}{\sbf\large}
 \titleformat*{\subsection}{\sbf\normalsize}
@@ -96,6 +96,7 @@
 \@ifclassloaded{book}{
 
 \pagestyle{fancy}
+\pagenumbering{roman}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace{2.5mm} #1}{}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\bfseries\leftmark}
@@ -119,8 +120,8 @@
  \vskip 40\p@
   }
 
-%% table of contents font changes
-
+%% table of contents font changes (book)
+\renewcommand{\cfttoctitlefont}{\sbf\Huge}
 \renewcommand{\cftchapfont}{\sbf}
 \renewcommand{\cftsecfont}{\normalfont\sffamily}
 \renewcommand{\cftsubsecfont}{\normalfont\sffamily}
@@ -132,6 +133,13 @@
 }{
 \let\mainmatter=\,
 \let\frontmatter=\,
+
+%% table of contents font changes (article)
+\renewcommand{\cfttoctitlefont}{\sbf\large}
+\renewcommand{\cftsecfont}{\sbf}
+\renewcommand{\cftsubsecfont}{\normalfont\sffamily}
+\renewcommand{\cftsubsubsecfont}{\normalfont\sffamily}
+
 }
 
 %% figure and table font changes
