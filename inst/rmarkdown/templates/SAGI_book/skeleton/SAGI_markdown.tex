@@ -10,6 +10,12 @@ $endif$
 $if(linestretch)$
 \setstretch{$linestretch$}
 $endif$
+
+% Enable shading if it's set, otherwise disable
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available

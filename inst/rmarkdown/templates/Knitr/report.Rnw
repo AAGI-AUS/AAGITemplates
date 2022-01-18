@@ -37,10 +37,10 @@ Grains Industry (Southern Region)\\ Technical Report Series: SS001} \\[6mm]
 \vspace{2mm}{\sbf Report for UA000001}\\[5mm]
 
 \sf\normalsize
-Julian Taylor\\
-Senior Biometrician, SAGI-STH\\
+Your Name\\
+Your Title, SAGI-STH\\
 PMB 1 Glen Osmond 5064\\
-email: julian.taylor@adelaide.edu.au\\[8mm]
+email: your.email@adelaide.edu.au\\[8mm]
 
 \today\\
 \HRule
