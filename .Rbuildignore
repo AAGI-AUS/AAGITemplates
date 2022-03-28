@@ -2,3 +2,6 @@
 ^\.Rproj\.user$
 Readme.md
 todo.md
+^.*\.html
+^.*\.pdf
+libs/*
