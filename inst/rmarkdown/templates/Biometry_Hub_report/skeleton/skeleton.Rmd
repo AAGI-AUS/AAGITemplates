@@ -1,0 +1,80 @@
+---
+# Report details
+report-series: "University of Adelaide Biometry Hub\\ Technical Report Series"
+report-number: "SS001"
+title: "Informative title for report"
+subtitle: "Report for <Project Number>"
+author: "Your Name"
+job-title: 
+address: 
+email: "your.email@adelaide.edu.au"
+
+# List logos here as the filename without extension
+logos:
+  - UoA
+  - bhub
+
+#Latex options
+documentclass: article  # Alternatively book for chapters that start new pages
+classoption:
+  - oneside
+  - 12pt
+header-includes:
+  - \usepackage{bbm}
+bibliography: references.bib
+csl: biometrics.csl
+knit: yes
+number-sections: yes
+toc: yes
+link-citations: true
+output:
+  bookdown::pdf_document2:
+    keep_tex: yes
+    latex_engine: pdflatex
+    template: SAGI_markdown.tex
+---
+
+```{r knitr_options, include=FALSE}
+library(rmarkdown)
+library(xtable)
+options(formatR.arrow=FALSE, xtable.comment=FALSE)
+knitr::opts_chunk$set(fig.path='figure/Rplots-',
+                      fig.align='center',
+                      fig.show='hold',
+                      comment=NA,
+                      background='white',
+                      highlight=FALSE,
+                      tidy=TRUE,
+                      tidy.opts=list(width.cutoff=60),
+                      size= "small",
+                      prompt=TRUE)
+```
+
+## Executive summary {-}
+
+\mainmatter
+\pagestyle{fancy}
+
+<!-- article class-->
+
+# Section 1
+
+## This is a subection heading
+
+Example R code
+
+```{r example1}
+plot(pressure)
+```
+
+
+### This is a subsubsection heading
+
+# Next Section
+
+
+\newpage
+# References {-}
+
+
+

@@ -1,0 +1,4 @@
+name: Biometry Hub Report
+description: >
+ Template for creating Biometry Hub reports in Rmarkdown.
+create_dir: true
