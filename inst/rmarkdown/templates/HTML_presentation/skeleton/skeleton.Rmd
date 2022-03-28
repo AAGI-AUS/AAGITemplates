@@ -48,6 +48,16 @@ Here are some notes for this slide
 
 ---
 
+# Changing backgrounds
+
+- Just swap in a different image and name it the same as the current one (`title_bg.png` for the title slide, or `slide_bg_16_9.png`/`slide_bg.png` for the regular slides.)
+
+--
+
+- If you need to change logos, you will need to edit the `custom.css` file. The second line of the file lists the logos on the title slide.
+
+---
+
 # Knit to index.html filename:
 
 Simply include this in your YAML header:
