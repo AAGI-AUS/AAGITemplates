@@ -1,0 +1,97 @@
+---
+title: "Your Presentation Title"
+subtitle: "University of Adelaide Biometry Hub"
+author: Your Name
+institute: http://ua.edu.au/biometryhub
+date: "`r format(Sys.Date(), '%d %B %Y')`"  # E.g. 28 March 2022
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    seal: true
+    self_contained: false  # Change to true if presenting without internet access
+    css: ["robot", "robot-fonts", "assets/custom.css"]
+    includes:
+      in_header: "assets/mathjax-equation-numbers.html"
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9' # alternatives '16:9' or '4:3' or others e.g. 13:9
+      # navigation:
+      #   scroll: false # disable slide transitions by scrolling
+---
+
+class: bgclass
+layout: true
+<!-- Sets the background class to be the Biometry Hub image -->
+
+---
+
+# Basics of xaringan
+
+Check out an in-depth tutorial [here](https://slides.yihui.name/xaringan/#1) or read the documentation [here](https://bookdown.org/yihui/rmarkdown/xaringan.html).
+
+
+
+- Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
+
+- You can write slide notes under three question marks `???`. These notes are only displayed in the presentation mode, and only the speaker can see these notes. 
+
+- You can see all the goodies like this (hint press `p`).
+
+See the following slides for some more tips and tricks
+
+???
+
+Here are some notes for this slide
+
+
+---
+
+# Knit to index.html filename:
+
+Simply include this in your YAML header:
+
+```
+knit: (
+    function(inputFile, encoding) {
+        filename <- 'index'
+        rmarkdown::render(
+            input       = inputFile,
+            encoding    = encoding,
+            output_file = filename) })
+```            
+
+This is useful in a github repo, so you can make slides available over the web.
+
+---
+
+# Footnotes
+
+To include footnotes, you will need to DIY<sup>1</sup>
+
+Don't forget the footnote!.fn[2]
+
+.footnote[
+[1] Footnotes are not automatic.  In the text use `<sup>1</sup>` or `.fn[1]`
+
+[2] At the end of the slide `.footnote[[1] Text associated with footnote 1.]`
+]
+
+---
+
+class: columns-2
+
+## Equations
+
+
+MathJax is supported out of the box.  You can put inline equations inside dollar signs, e.g. `$\alpha + \beta$` renders as $\alpha + \beta$.   Display style works with double dollar signs: 
+
+<span>`$`</span><span>`$`</span>`\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i`<span>`$`</span><span>`$`</span>
+$$\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i$$
+For multi-line equations you can use <span>`\`</span>`begin{align} ...  `</span>`\`</span>`end{align}`
+\begin{align}
+\bar{X} & = X_1 + X_2 + \ldots + X_n \nonumber \\
+& = \frac{1}{n}\sum_{i=1}^nX_i \label{good-eq}
+\end{align}
+Note the equation number! We can reference it in the usual way, using <span>`\`</span>`eqref{label}`, \eqref{good-eq}, or <span>`\`</span>`ref{label}`, \ref{good-eq}.

@@ -1,0 +1,61 @@
+.title-slide {
+  background-image: url(UoA.png), url(GRDC.png), url(bhub.png), url(bg.png);
+  background-position: 3% 95%, 22% 94%, 37% 95%, 0% 0%;
+  background-size: 15%, 13%, 8%, 100%;
+}
+
+.title-slide h1, h2, h3, h4 {
+  background-color: transparent !important;
+}
+
+.remark-slide-content {
+  font-size: 1.5em;
+}
+
+.remark-slide-content h1 {
+  font-size: 50px;
+}
+
+.remark-slide-content h2 {
+  font-size: 32px;
+}
+
+.move-up {
+  margin-top: -75px;
+}
+
+.move-up img {
+  border-radius: 25px; !important
+}
+
+.footnote {
+  position: absolute;
+  bottom: 0;
+  padding-right: 8em; /* to avoid the page numbering */
+}
+/* footnote identifier use: .fn[1] */
+.fn {
+  vertical-align: super;
+  font-size: 80%;
+}
+.footnote {
+  font-size: 0.8em;
+}
+.remark-slide-content .footnote  p,
+.remark-slide-content .footnote li {
+  font-size: 0.8em!important;
+}
+.footnote .remark-code,
+.footnote .remark-inline-code{ font-size: 0.8em!important; }
+
+
+.bgclass {
+  background-image: url("biometryhub_simple_transparent_16_9.jpg");
+  background-position: center;
+  background-size: contain;
+}
+
+/*.remark-slide-content ul, li {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}*/

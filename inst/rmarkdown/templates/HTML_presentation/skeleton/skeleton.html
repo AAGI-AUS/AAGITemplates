@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Your Presentation Title</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Your Name" />
+    <meta name="date" content="2022-03-28" />
+    <script src="libs/header-attrs-2.13/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/robot.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/robot-fonts.css" rel="stylesheet" />
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } },
+      });
+    </script>
+    <style>
+    .mjx-mrow a {
+      color: black;
+      pointer-events: none;
+      cursor: default;
+    }
+    </style>
+    <link rel="stylesheet" href="assets/custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Your Presentation Title
+## University of Adelaide Biometry Hub
+### Your Name
+### <a href="http://ua.edu.au/biometryhub" class="uri">http://ua.edu.au/biometryhub</a>
+### 28 March 2022
+
+---
+
+
+class: bgclass
+layout: true
+&lt;!-- Sets the background class to be the Biometry Hub image --&gt;
+
+---
+
+# Basics of xaringan
+
+Check out an in-depth tutorial [here](https://slides.yihui.name/xaringan/#1) or read the documentation [here](https://bookdown.org/yihui/rmarkdown/xaringan.html).
+
+
+
+- Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
+
+- You can write slide notes under three question marks `???`. These notes are only displayed in the presentation mode, and only the speaker can see these notes. 
+
+- You can see all the goodies like this (hint press `p`).
+
+See the following slides for some more tips and tricks
+
+???
+
+Here are some notes for this slide
+
+
+---
+
+# Knit to index.html filename:
+
+Simply include this in your YAML header:
+
+```
+knit: (
+    function(inputFile, encoding) {
+        filename &lt;- 'index'
+        rmarkdown::render(
+            input       = inputFile,
+            encoding    = encoding,
+            output_file = filename) })
+```            
+
+---
+
+# Footnotes
+
+To include footnotes, you will need to DIY&lt;sup&gt;1&lt;/sup&gt;
+
+Don't forget the footnote!.fn[2]
+
+.footnote[
+[1] Footnotes are not automatic.  In the text use `&lt;sup&gt;1&lt;/sup&gt;` or `.fn[1]`
+
+[2] At the end of the slide `.footnote[[1] Text associated with footnote 1.]`
+]
+
+---
+
+class: columns-2
+
+## Equations
+
+
+MathJax is supported out of the box.  You can put inline equations inside dollar signs, e.g. `$\alpha + \beta$` renders as `\(\alpha + \beta\)`.   Display style works with double dollar signs: 
+
+&lt;span&gt;`$`&lt;/span&gt;&lt;span&gt;`$`&lt;/span&gt;`\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i`&lt;span&gt;`$`&lt;/span&gt;&lt;span&gt;`$`&lt;/span&gt;
+`$$\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i$$`
+For multi-line equations you can use &lt;span&gt;`\`&lt;/span&gt;`begin{align} ...  `&lt;/span&gt;`\`&lt;/span&gt;`end{align}`
+`\begin{align}
+\bar{X} &amp; = X_1 + X_2 + \ldots + X_n \nonumber \\
+&amp; = \frac{1}{n}\sum_{i=1}^nX_i \label{good-eq}
+\end{align}`
+Note the equation number! We can reference it in the usual way, using &lt;span&gt;`\`&lt;/span&gt;`eqref{label}`, \eqref{good-eq}, or &lt;span&gt;`\`&lt;/span&gt;`ref{label}`, \ref{good-eq}.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

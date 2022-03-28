@@ -1,0 +1,4 @@
+name: Biometry Hub HTML Presentation
+description: >
+  Create a presentation using the Biometry Hub theme based on the xaringan package.
+create_dir: false
