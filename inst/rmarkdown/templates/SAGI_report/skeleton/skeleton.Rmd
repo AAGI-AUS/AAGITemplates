@@ -1,28 +1,35 @@
 ---
-#Report details
+# Report details
+report-series: "Statistics for the Australian\\ Grains Industry (Southern Region)\\ Technical Report Series"
 report-number: "SS001"
 title: "Informative title for report"
-subtitle: "Report for UA000001"
+subtitle: "Report for <Project Number>"
 author: "Your Name"
 job-title: 
 address: 
 email: "your.email@adelaide.edu.au"
 
+# List logos here as the filename without extension
+logos:
+  - UoA
+  - GRDC
+  - SAGI-STH
+
 #Latex options
-documentclass: article
+documentclass: article  # Alternatively book
 classoption:
   - oneside
   - 12pt
 header-includes:
   - \usepackage{bbm}
+bibliography: references.bib
+csl: biometrics.csl
 knit: yes
 number-sections: yes
 toc: yes
-bibliography: references.bib
-csl: biometrics.csl
 link-citations: true
 output:
-  pdf_document:
+  bookdown::pdf_document2:
     keep_tex: yes
     latex_engine: pdflatex
     template: SAGI_markdown.tex
@@ -31,7 +38,17 @@ output:
 ```{r knitr_options, include=FALSE}
 library(rmarkdown)
 library(xtable)
-source("initialize.R")
+options(formatR.arrow=FALSE, xtable.comment=FALSE)
+knitr::opts_chunk$set(fig.path='figure/Rplots-',
+                      fig.align='center',
+                      fig.show='hold',
+                      comment=NA,
+                      background='white',
+                      highlight=FALSE,
+                      tidy=TRUE,
+                      tidy.opts=list(width.cutoff=60),
+                      size= "small",
+                      prompt=TRUE)
 ```
 
 ## Executive summary {-}

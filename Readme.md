@@ -2,9 +2,9 @@
 
 This package adds templates to the RStudio `New > R Markdown...` button.
 
-Can be installed with:
+It can be installed with:
 
 ```r
-if(!require("devtools")) install.packages("devtools") 
-devtools::install_github("biometryhub/SAGITemplates", upgrade = FALSE)
+if(!require("remotes")) install.packages("remotes") 
+remotes::install_github("biometryhub/SAGITemplates", upgrade = FALSE)
 ```

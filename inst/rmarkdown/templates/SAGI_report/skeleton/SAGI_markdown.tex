@@ -61,17 +61,25 @@ $endfor$
 \HRule\\[5mm]
 
 %%% logos go here ...
+$if(colspace)$
+\setlength{\tabcolsep}{$colspace$}
+$else$
+\setlength{\tabcolsep}{12pt}
+$endif$
 
-\begin{tabular}{rrrr}
-\includegraphics[height = 1.5cm]{UoA}  &
-\includegraphics[height = 2.0cm]{GRDC} &
-\includegraphics[height = 2.0cm]{SARDI} &
-\includegraphics[height = 1.5cm]{SAGI-STH}
+\begin{tabular}{cccc}
+$if(logos)$
+$for(logos)$\includegraphics[height = 1.5cm]{$logos$} & $endfor$\\
+$endif$
+% \includegraphics[height = 1.5cm]{UoA}  &
+% \includegraphics[height = 2.0cm]{GRDC} &
+% \includegraphics[height = 2.0cm]{SARDI} &
+% \includegraphics[height = 1.5cm]{SAGI-STH}
 \end{tabular}\\[5mm]
+\setlength{\tabcolsep}{6pt}
 
 \huge
-\textcolor{blue}{\sbf Statistics for the Australian\\
-Grains Industry (Southern Region)\\ Technical Report Series: $report-number$}\\[6mm]
+\textcolor{blue}{\sbf $report-series$: $report-number$}\\[6mm]
 
 {\sbf $title$}\\
 \Large
