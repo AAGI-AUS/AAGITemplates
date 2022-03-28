@@ -1,5 +1,5 @@
 .title-slide {
-  background-image: url(UoA.png), url(GRDC.png), url(bhub.png), url(bg.png);
+  background-image: url(UoA.png), url(GRDC.png), url(bhub.png), url(title_bg.png);
   background-position: 3% 95%, 22% 94%, 37% 95%, 0% 0%;
   background-size: 15%, 13%, 8%, 100%;
 }
@@ -50,7 +50,7 @@
 
 
 .bgclass {
-  background-image: url("biometryhub_simple_transparent_16_9.jpg");
+  background-image: url("slide_bg_16_9.jpg");
   background-position: center;
   background-size: contain;
 }

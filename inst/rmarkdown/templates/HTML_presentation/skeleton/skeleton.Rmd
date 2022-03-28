@@ -11,14 +11,12 @@ output:
     self_contained: false  # Change to true if presenting without internet access
     css: ["robot", "robot-fonts", "assets/custom.css"]
     includes:
-      in_header: "assets/mathjax-equation-numbers.html"
+      in_header: "assets/mathjax-eq-num.html"
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
       ratio: '16:9' # alternatives '16:9' or '4:3' or others e.g. 13:9
-      # navigation:
-      #   scroll: false # disable slide transitions by scrolling
 ---
 
 class: bgclass
@@ -76,7 +74,7 @@ This is useful in a github repo, so you can make slides available over the web.
 
 ---
 
-# Footnotes
+## Footnotes
 
 To include footnotes, you will need to DIY<sup>1</sup>
 
@@ -105,3 +103,35 @@ For multi-line equations you can use <span>`\`</span>`begin{align} ...  `</span>
 & = \frac{1}{n}\sum_{i=1}^nX_i \label{good-eq}
 \end{align}
 Note the equation number! We can reference it in the usual way, using <span>`\`</span>`eqref{label}`, \eqref{good-eq}, or <span>`\`</span>`ref{label}`, \ref{good-eq}.
+
+---
+
+## Citations and references
+
+.pull-left[
+Xaringan doesn't support bibliographies in the usual markdown way (i.e. specifying a bibtex file in the yaml).
+
+It is possible to cite sources from a `.bib` file using the **RefManageR** package.  To do this, specify the `BibOptions()`:
+
+```{r, eval = FALSE}
+library(RefManageR)
+BibOptions(
+check.entries = FALSE, 
+bib.style = "authoryear", 
+cite.style = "authoryear", 
+style = "markdown",
+hyperlink = FALSE, 
+dashed = FALSE)
+{{myBib = ReadBib("references.bib")}}
+```
+]
+
+
+.pull-right[
+
+Make sure you update the highlighted line.
+
+Then you can cite any entry from your `.bib` file inline using `Citet()`, `Citep()`, `AutoCite()`, etc. (see [RefManageR](https://github.com/ropensci/RefManageR)). 
+
+]
+
