@@ -7,7 +7,6 @@ date: "`r format(Sys.Date(), '%d %B %Y')`"  # E.g. 28 March 2022
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    seal: true
     self_contained: false  # Change to true if presenting without internet access
     css: ["robot", "robot-fonts", "assets/custom.css"]
     includes:

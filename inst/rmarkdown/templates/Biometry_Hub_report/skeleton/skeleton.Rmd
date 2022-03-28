@@ -11,8 +11,8 @@ email: "your.email@adelaide.edu.au"
 
 # List logos here as the filename without extension
 logos:
-  - UoA
-  - bhub
+  - assets/UoA
+  - assets/bhub
 
 #Latex options
 documentclass: article  # Alternatively book for chapters that start new pages
@@ -22,7 +22,7 @@ classoption:
 header-includes:
   - \usepackage{bbm}
 bibliography: references.bib
-csl: biometrics.csl
+csl: assets/biometrics.csl
 knit: yes
 number-sections: yes
 toc: yes
@@ -31,7 +31,7 @@ output:
   bookdown::pdf_document2:
     keep_tex: yes
     latex_engine: pdflatex
-    template: SAGI_markdown.tex
+    template: assets/SAGI_markdown.tex
 ---
 
 ```{r knitr_options, include=FALSE}
