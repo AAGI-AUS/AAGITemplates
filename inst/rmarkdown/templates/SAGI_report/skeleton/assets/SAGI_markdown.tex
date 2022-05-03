@@ -83,7 +83,11 @@ $endif$
 
 {\sbf $title$}\\
 \Large
+$if(subtitle)$
 \vspace{2mm}{\sbf $subtitle$}\\[5mm]
+$else$
+\vspace{2mm}
+$endif$
 
 \sf\normalsize
 $if(author)$
