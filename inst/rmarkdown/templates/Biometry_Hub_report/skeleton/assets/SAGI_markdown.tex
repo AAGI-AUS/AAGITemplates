@@ -16,6 +16,10 @@ $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 
+% Set up tightlist because Rmarkdown is crashing on it
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
@@ -46,6 +50,12 @@ $endif$
 \let\rmarkdownfootnote\footnote%
 \def\footnote{\protect\rmarkdownfootnote}
 
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+{\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+{\par}
 
 $for(header-includes)$
 $header-includes$
@@ -79,7 +89,11 @@ $endif$
 \setlength{\tabcolsep}{6pt}
 
 \huge
+$if(report-number)$
 \textcolor{blue}{\sbf $report-series$: $report-number$}\\[6mm]
+$else$
+\textcolor{blue}{\sbf $report-series$}\\[6mm]
+$endif$
 
 {\sbf $title$}\\
 \Large
