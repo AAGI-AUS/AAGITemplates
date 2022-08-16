@@ -57,13 +57,25 @@ $endif$
 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
 {\par}
 
+
 $for(header-includes)$
 $header-includes$
 $endfor$
 
 \begin{document}
 
+$if(project-number)$
+% Set up header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Project number: $project-number$}
+\cfoot{\thepage}
+$if(email)$
+\lfoot{Contact email:\;$email$}
+$endif$
+$else$
 \pagestyle{plain}
+$endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start titlepage
 
 $if(colspace)$
@@ -90,9 +102,7 @@ $endif$
 $if(author)$
 $for(author)$$author$$sep$, $endfor$\newline
 $endif$
-$if(email)$
-Contact email:\;$email$
-$endif$}
+}
 
 Last updated \today
 \vspace{5mm}
