@@ -1,11 +1,11 @@
 \documentclass[oneside,12pt]{book}
 
-\usepackage[knit]{SAGI3}
+\usepackage[knit]{assets/SAGI3}
 
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
 library(xtable)
-source("initialize.R")
+source("assets/initialize.R")
 @
 
 \begin{document}
@@ -22,10 +22,10 @@ source("initialize.R")
 %%% logos go here ...
 
 \begin{tabular}{rrrr}
-\includegraphics[height = 1.5cm]{UoA}  &
-\includegraphics[height = 2.0cm]{GRDC} &
-\includegraphics[height = 2.0cm]{SARDI} &
-\includegraphics[height = 1.5cm]{SAGI-STH}
+\includegraphics[height = 1.5cm]{assets/UoA}  &
+\includegraphics[height = 2.0cm]{assets/GRDC} &
+\includegraphics[height = 2.0cm]{assets/SARDI} &
+\includegraphics[height = 1.5cm]{assets/SAGI-STH}
 \end{tabular}\\[5mm]
 
 \huge
@@ -90,7 +90,7 @@ plot(pressure)
 This shows a smooth transition to the next chapter.
 
 \addcontentsline{toc}{chapter}{References}
-\bibliographystyle{biom}
+\bibliographystyle{assets/biom}
 %\bibliography{references}
 
 %%%%%%%%%%%% Article class
