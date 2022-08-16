@@ -34,7 +34,9 @@ bh_report <- function(filename) {
                    template = "Biometry_Hub_report",
                    package = "SAGITemplates",
                    create_dir = TRUE, edit = FALSE)
-  file.edit(file.path(filename, paste0(filename, ".Rmd")))
+  file <- file.path(filename, paste0(filename, ".Rmd"))
+  file.edit(file)
+  invisible(file)
 }
 
 #' @rdname new_report
@@ -43,7 +45,9 @@ sagi_report <- function(filename) {
                    template = "SAGI_report",
                    package = "SAGITemplates",
                    create_dir = TRUE, edit = FALSE)
-  file.edit(file.path(filename, paste0(filename, ".Rmd")))
+  file <- file.path(filename, paste0(filename, ".Rmd"))
+  file.edit(file)
+  invisible(file)
 }
 
 #' @rdname new_report
@@ -52,5 +56,42 @@ html_presentation <- function(filename) {
                    template = "HTML_presentation",
                    package = "SAGITemplates",
                    create_dir = TRUE, edit = FALSE)
-  file.edit(file.path(filename, paste0(filename, ".Rmd")))
+  file <- file.path(filename, paste0(filename, ".Rmd"))
+  file.edit(file)
+  invisible(file)
+}
+
+#' @rdname new_report
+knitr_report <- function(filename) {
+  # create folder
+  if(!dir.exists(filename)) {
+    dir.create(trimws(filename))
+  }
+
+  # copy template and assets into folder
+  # file.copy(
+    file.path(find.package("SAGITemplates"),
+                      "inst", "rmarkdown", "templates")
+
+  # rename template
+  # Open for editing
+
+  rmarkdown::draft(file = filename,
+                   template = "HTML_presentation",
+                   package = "SAGITemplates",
+                   create_dir = TRUE, edit = FALSE)
+  file <- file.path(filename, paste0(filename, ".Rmd"))
+  file.edit(file)
+  invisible(file)
+}
+
+#' @rdname new_report
+html_presentation <- function(filename) {
+  rmarkdown::draft(file = filename,
+                   template = "HTML_presentation",
+                   package = "SAGITemplates",
+                   create_dir = TRUE, edit = FALSE)
+  file <- file.path(filename, paste0(filename, ".Rmd"))
+  file.edit(file)
+  invisible(file)
 }
