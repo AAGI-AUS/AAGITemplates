@@ -1,0 +1,61 @@
+---
+# Report details
+title: "Progress report for project ..."
+subtitle: "Subtitle here"
+author: 
+- Author 1
+- Author 2
+email: 
+
+# List logos here as the filename without extension
+logos:
+  - assets/UoA
+  - assets/bhub
+
+#Latex options
+header-includes:
+  - \usepackage{bbm}
+# bibliography: references.bib
+# csl: assets/biometrics.csl
+knit: yes
+number-sections: no
+toc: no
+link-citations: true
+output:
+  bookdown::pdf_document2:
+    keep_tex: yes
+    latex_engine: pdflatex
+    template: assets/SAGI_markdown.tex
+---
+
+```{r knitr_options, include=FALSE}
+library(rmarkdown)
+library(xtable)
+options(formatR.arrow=FALSE, xtable.comment=FALSE)
+knitr::opts_chunk$set(fig.path='figure/Rplots-',
+                      fig.align='center',
+                      fig.show='hold',
+                      comment=NA,
+                      background='white',
+                      highlight=FALSE,
+                      tidy=TRUE,
+                      tidy.opts=list(width.cutoff=60),
+                      size= "small",
+                      prompt=TRUE)
+```
+
+# Section 1
+
+## This is a subection heading
+
+Example R code
+
+```{r example1}
+plot(pressure)
+```
+
+
+### This is a subsubsection heading
+
+# Next Section
+

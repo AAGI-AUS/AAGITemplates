@@ -1,0 +1,4 @@
+name: Biometry Hub Report (short)
+description: >
+ Template for creating a short or single page Biometry Hub report in Rmarkdown.
+create_dir: true

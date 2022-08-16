@@ -1,0 +1,119 @@
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+$if(knit)$
+\usepackage[knit]{assets/SAGI3}
+$endif$
+$if(fontfamily)$
+\usepackage{$fontfamily$}
+$else$
+\usepackage{lmodern}
+$endif$
+$if(linestretch)$
+\setstretch{$linestretch$}
+$endif$
+
+% Enable shading if it's set, otherwise disable
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+% Set up tightlist because Rmarkdown is crashing on it
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+$if(number-sections)$
+\setcounter{secnumdepth}{2}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+$if(verbatim-in-note)$
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+{\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+{\par}
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+
+\pagestyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start titlepage
+
+$if(colspace)$
+\setlength{\tabcolsep}{$colspace$}
+$else$
+\setlength{\tabcolsep}{12pt}
+$endif$
+
+% Logos
+$if(logos)$
+$for(logos)$\includegraphics[height = 1.2cm]{$logos$} \hspace*{0.2cm} $endfor$
+\hfill
+$endif$
+
+% Title and authors
+\Large
+{\sbf $title$}\newline
+$if(subtitle)$
+{\sf\normalsize $subtitle$}
+$else$
+$endif$
+
+\sf\normalsize{
+$if(author)$
+$for(author)$$author$$sep$, $endfor$\newline
+$endif$
+$if(email)$
+Contact email:\;$email$
+$endif$}
+
+Last updated \today
+\vspace{5mm}
+% \end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end titlepage
+
+% \clearpage
+% $if(book-class)$
+% \frontmatter
+% $endif$
+
+$if(toc)$
+\setcounter{page}{1}
+\setcounter{tocdepth}{2}
+\tableofcontents
+$endif$
+
+
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+\end{document}
