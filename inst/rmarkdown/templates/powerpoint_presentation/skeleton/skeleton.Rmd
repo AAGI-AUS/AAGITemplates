@@ -1,0 +1,52 @@
+---
+title: "Your Presentation Title"
+#subtitle: "University of Adelaide Biometry Hub"
+author: Your Name
+institute: http://ua.edu.au/biometryhub
+date: "`r format(Sys.Date(), '%d %B %Y')`"  # E.g. 28 March 2022
+output:
+  powerpoint_presentation:
+    reference_doc: assets/template.pptx
+---
+
+# Basics of Powerpoint through Rmarkdown
+
+You can use most of the regular Rmarkdown features and formatting:
+
+- Dot points
+
+- **Bold**, _Italics_ and ~~strikethrough~~
+
+---
+
+## Equations
+
+
+Equations are supported out of the box.  You can put inline equations inside dollar signs, e.g. `$\alpha + \beta$` renders as $\alpha + \beta$.   Display style works with double dollar signs: 
+
+<span>`$`</span><span>`$`</span>`\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i`<span>`$`</span><span>`$`</span>
+$$\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i$$
+For multi-line equations you can use <span>`\`</span>`begin{align} ...  `</span>`\`</span>`end{align}`
+\begin{align}
+\bar{X} & = X_1 + X_2 + \ldots + X_n \nonumber \\
+& = \frac{1}{n}\sum_{i=1}^nX_i \label{good-eq}
+\end{align}
+Unfortunately we don't appear to be able to reference equations.
+
+---
+
+# Code
+
+Blocks of code can be displayed as per normal:
+
+```{r}
+sample(1:10, size = 5)
+```
+
+
+And plots (you will likely need to increase `dpi` chunk option):
+
+```{r plot, dpi = 300}
+plot(faithful)
+```
+
