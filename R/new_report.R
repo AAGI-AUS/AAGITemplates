@@ -1,7 +1,7 @@
 #' Create a new Biometry Hub Report using a template
 #'
 #' @param filename The filename of the report
-#' @param type The type of the report. Valid types are `biometry_hub_report`, `sagi_report`, `html_presentation`, `short_report` and `knitr_report`.
+#' @param type The type of the report. Valid types are `biometry_hub_report`, `sagi_report`, `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.
 #'
 #' @importFrom rmarkdown draft
 #' @importFrom utils file.edit
@@ -18,27 +18,29 @@
 #' }
 new_report <- function(filename, type) {
   type <- match.arg(tolower(type),
-                    choices = c("biometry_hub_report", "sagi_report", "html_presentation", "short_report", "knitr_report"))
+                    choices = c("biometry_hub_report", "sagi_report",
+                                "html_presentation", "short_report",
+                                "knitr_report", "powerpoint_presentation"))
 
+  ext <- "Rmd"
   if(type == "biometry_hub_report") {
     bh_report(filename)
-    ext <- "Rmd"
   }
   else if(type == "sagi_report") {
     sagi_report(filename)
-    ext <- "Rmd"
   }
   else if(type == "html_presentation") {
     html_presentation(filename)
-    ext <- "html"
   }
   else if(type == "short_report") {
     short_report(filename)
-    ext <- "Rmd"
   }
   else if(type == "knitr_report") {
     knitr_report(filename)
     ext <- "Rnw"
+  }
+  else if(type == "powerpoint_presentation") {
+    powerpoint_presentation(filename)
   }
   invisible(file.path(filename, paste(filename, ext, sep = ".")))
 }
@@ -109,4 +111,13 @@ knitr_report <- function(filename) {
   invisible(file)
 }
 
-
+#' @rdname new_report
+powerpoint_presentation <- function(filename) {
+  rmarkdown::draft(file = filename,
+                   template = "powerpoint_presentation",
+                   package = "SAGITemplates",
+                   create_dir = TRUE, edit = FALSE)
+  file <- file.path(filename, paste0(filename, ".Rmd"))
+  file.edit(file)
+  invisible(file)
+}
