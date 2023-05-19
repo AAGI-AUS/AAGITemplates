@@ -5,6 +5,7 @@ $endif$
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
+\usepackage[T1]{fontenc}
 \usepackage{lmodern}
 $endif$
 $if(linestretch)$
@@ -115,7 +116,11 @@ $address$\\
 $endif$
 email:\;$email$\\[8mm]
 
+$if(date)$
+$date$\\
+$else$
 \today\\
+$endif$
 \HRule
 \end{flushright}
 

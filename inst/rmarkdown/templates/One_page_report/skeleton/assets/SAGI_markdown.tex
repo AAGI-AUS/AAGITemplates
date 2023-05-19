@@ -5,6 +5,7 @@ $endif$
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
+\usepackage[T1]{fontenc}
 \usepackage{lmodern}
 $endif$
 $if(linestretch)$
@@ -104,7 +105,11 @@ $for(author)$$author$$sep$, $endfor$\newline
 $endif$
 }
 
-Last updated \today
+Last updated $if(date)$
+$date$
+$else$
+\today
+$endif$
 \vspace{5mm}
 % \end{flushright}
 

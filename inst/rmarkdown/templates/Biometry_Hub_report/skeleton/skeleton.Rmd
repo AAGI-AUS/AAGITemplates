@@ -8,6 +8,7 @@ author: "Your Name"
 job-title: 
 address: 
 email: "your.email@adelaide.edu.au"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 
 # List logos here as the filename without extension
 logos:
@@ -59,7 +60,7 @@ knitr::opts_chunk$set(fig.path='figure/Rplots-',
 
 # Section 1
 
-## This is a subection heading
+## This is a subsection heading
 
 Example R code
 

@@ -1,7 +1,7 @@
 #' Create a new Biometry Hub Report using a template
 #'
 #' @param filename The filename of the report
-#' @param type The type of the report. Valid types are `biometry_hub_report`, `sagi_report`, `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.
+#' @param type The type of the report. Valid types are `biometry_hub_report` (or just `bh_report`), `sagi_report`, `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.
 #'
 #' @importFrom rmarkdown draft
 #' @importFrom utils file.edit
@@ -18,12 +18,13 @@
 #' }
 new_report <- function(filename, type) {
   type <- match.arg(tolower(type),
-                    choices = c("biometry_hub_report", "sagi_report",
+                    choices = c("biometry_hub_report", "bh_report",
+                                "sagi_report",
                                 "html_presentation", "short_report",
                                 "knitr_report", "powerpoint_presentation"))
 
   ext <- "Rmd"
-  if(type == "biometry_hub_report") {
+  if(type == "biometry_hub_report" || type == "bh_report") {
     bh_report(filename)
   }
   else if(type == "sagi_report") {
@@ -41,6 +42,9 @@ new_report <- function(filename, type) {
   }
   else if(type == "powerpoint_presentation") {
     powerpoint_presentation(filename)
+  }
+  else {
+    stop("type not recognised.")
   }
   invisible(file.path(filename, paste(filename, ext, sep = ".")))
 }

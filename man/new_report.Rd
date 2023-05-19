@@ -7,6 +7,7 @@
 \alias{html_presentation}
 \alias{short_report}
 \alias{knitr_report}
+\alias{powerpoint_presentation}
 \title{Create a new Biometry Hub Report using a template}
 \usage{
 new_report(filename, type)
@@ -20,11 +21,13 @@ html_presentation(filename)
 short_report(filename)
 
 knitr_report(filename)
+
+powerpoint_presentation(filename)
 }
 \arguments{
 \item{filename}{The filename of the report}
 
-\item{type}{The type of the report. Valid types are `biometry_hub_report`, `sagi_report`, `html_presentation`, `short_report` and `knitr_report`.}
+\item{type}{The type of the report. Valid types are `biometry_hub_report` (or just `bh_report`), `sagi_report`, `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.}
 }
 \value{
 Returns the path to the created file invisibly.
