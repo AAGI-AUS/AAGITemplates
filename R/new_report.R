@@ -1,7 +1,7 @@
 #' Create a new Biometry Hub Report using a template
 #'
 #' @param filename The filename of the report
-#' @param type The type of the report. Valid types are `biometry_hub_report` (or just `bh_report`), `sagi_report`, `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.
+#' @param type The type of the report. Valid types are `biometry_hub_report` (or just `bh_report`), `aagi_report`, `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.
 #'
 #' @importFrom rmarkdown draft
 #' @importFrom utils file.edit
@@ -19,7 +19,7 @@
 new_report <- function(filename, type) {
   type <- match.arg(tolower(type),
                     choices = c("biometry_hub_report", "bh_report",
-                                "sagi_report",
+                                "aagi_report",
                                 "html_presentation", "short_report",
                                 "knitr_report", "powerpoint_presentation"))
 
@@ -27,8 +27,8 @@ new_report <- function(filename, type) {
   if(type == "biometry_hub_report" || type == "bh_report") {
     bh_report(filename)
   }
-  else if(type == "sagi_report") {
-    sagi_report(filename)
+  else if(type == "aagi_report") {
+    aagi_report(filename)
   }
   else if(type == "html_presentation") {
     html_presentation(filename)
@@ -53,7 +53,7 @@ new_report <- function(filename, type) {
 bh_report <- function(filename) {
   rmarkdown::draft(file = filename,
                    template = "Biometry_Hub_report",
-                   package = "SAGITemplates",
+                   package = "AAGITemplates",
                    create_dir = TRUE, edit = FALSE)
   file <- file.path(filename, paste0(filename, ".Rmd"))
   file.edit(file)
@@ -61,10 +61,10 @@ bh_report <- function(filename) {
 }
 
 #' @rdname new_report
-sagi_report <- function(filename) {
+aagi_report <- function(filename) {
   rmarkdown::draft(file = filename,
-                   template = "SAGI_report",
-                   package = "SAGITemplates",
+                   template = "AAGI_report",
+                   package = "AAGITemplates",
                    create_dir = TRUE, edit = FALSE)
   file <- file.path(filename, paste0(filename, ".Rmd"))
   file.edit(file)
@@ -75,7 +75,7 @@ sagi_report <- function(filename) {
 html_presentation <- function(filename) {
   rmarkdown::draft(file = filename,
                    template = "HTML_presentation",
-                   package = "SAGITemplates",
+                   package = "AAGITemplates",
                    create_dir = TRUE, edit = FALSE)
   file <- file.path(filename, paste0(filename, ".Rmd"))
   file.edit(file)
@@ -86,7 +86,7 @@ html_presentation <- function(filename) {
 short_report <- function(filename) {
   rmarkdown::draft(file = filename,
                    template = "one_page_report",
-                   package = "SAGITemplates",
+                   package = "AAGITemplates",
                    create_dir = TRUE, edit = FALSE)
   file <- file.path(filename, paste0(filename, ".Rmd"))
   file.edit(file)
@@ -100,7 +100,7 @@ knitr_report <- function(filename) {
     dir.create(trimws(filename))
   }
 
-  files <- list.files(file.path(find.package("SAGITemplates"),
+  files <- list.files(file.path(find.package("AAGITemplates"),
                      "inst", "rmarkdown", "templates", "Knitr"), full.names = TRUE)
   # copy template and assets into folder
   file.copy(from = files, to = filename, recursive = TRUE)
@@ -119,7 +119,7 @@ knitr_report <- function(filename) {
 powerpoint_presentation <- function(filename) {
   rmarkdown::draft(file = filename,
                    template = "powerpoint_presentation",
-                   package = "SAGITemplates",
+                   package = "AAGITemplates",
                    create_dir = TRUE, edit = FALSE)
   file <- file.path(filename, paste0(filename, ".Rmd"))
   file.edit(file)

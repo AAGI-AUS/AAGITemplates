@@ -1,0 +1,4 @@
+name: AAGI Report
+description: >
+ Template for creating reports including AAGI logos and styling in Rmarkdown.
+create_dir: true

@@ -1,7 +1,7 @@
 Type: Package
-Package: SAGITemplates
-Title: Add SAGI Templates to `New Rmarkdown` Window
-Version: 0.4.1
+Package: AAGITemplates
+Title: Add AAGI Templates to `New Rmarkdown` Window
+Version: 0.5.0
 Authors@R: c(
     person("Sam", "Rogers", email = "sam.rogers@adelaide.edu.au", role = "cre"),
     person("Julian", "Taylor", email = "julian.taylor@adelaide.edu.au", role = "aut"),
@@ -9,7 +9,7 @@ Authors@R: c(
     )
 Description: Clicking the RStudio New Rmarkdown button shows a window
     where various Rmarkdown templates can be selected. This package adds
-    SAGI-III and Biometry Hub reporting templates in this window as an
+    AAGI and Biometry Hub reporting templates in this window as an
     easy way to add required template files such as logos, styling and
     initialisation scripts when creating a new report.
 License: MIT + file LICENSE

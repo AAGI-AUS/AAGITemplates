@@ -1,0 +1,191 @@
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+$if(knit)$
+\usepackage[knit]{assets/SAGI3}
+$endif$
+$if(fontfamily)$
+\usepackage{$fontfamily$}
+$else$
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+$endif$
+$if(linestretch)$
+\setstretch{$linestretch$}
+$endif$
+
+% Define the AAGI colour
+\usepackage{xcolor}
+\definecolor{AAGI}{HTML}{00808b}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=AAGI,
+    urlcolor=AAGI
+    }
+
+% Enable shading if it's set, otherwise disable
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+% Set up tightlist because Rmarkdown is crashing on it
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+$if(number-sections)$
+\setcounter{secnumdepth}{2}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+$if(verbatim-in-note)$
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+{\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+{\par}
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start titlepage
+
+\thispagestyle{empty}
+\vspace*{-30mm}
+
+\begin{center}
+\includegraphics[height = 3cm]{assets/AAGI_logo}
+\end{center}
+
+
+\vfill
+
+\begin{flushright}
+\HRule\\[5mm]
+
+
+\huge
+$if(report-number)$
+\textcolor{AAGI}{\sbf $report-series$ \\Technical Report Series: $report-number$}\\[6mm]
+$else$
+\textcolor{AAGI}{\sbf $report-series$}\\[6mm]
+$endif$
+
+{\sbf $title$}\\
+\Large
+$if(subtitle)$
+\vspace{2mm}{\sbf $subtitle$}\\[5mm]
+$else$
+\vspace{2mm}
+$endif$
+
+\sf\normalsize
+$if(author)$
+$for(author)$$author$\\ $endfor$
+$endif$
+$if(job-title)$
+$job-title$\\
+$endif$
+$if(address)$
+$address$\\
+$endif$
+\vspace*{0.4cm}
+email:\;$email$\\[8mm]
+
+$if(date)$
+$date$\\
+$else$
+\today\\
+$endif$
+\HRule
+\end{flushright}
+
+
+
+%%% logos go here ...
+$if(colspace)$
+\setlength{\tabcolsep}{$colspace$}
+$else$
+\setlength{\tabcolsep}{12pt}
+$endif$
+
+\vfill
+
+$if(partner-logo)$
+\begin{tabular}{cl}
+\noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth, height=3cm]{assets/Project_partner}}
+\makebox[0pt][r]{% Similar to \llap
+    \raisebox{1em}{%
+    \includegraphics[height=0.1428\paperwidth]{$partner-logo$}
+    }\hspace*{1em}
+    }
+\end{tabular}
+$else$
+\noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth]{assets/Partners}}
+$endif$
+\vspace*{-30mm}
+
+% \begin{tabular}{cccc}
+% $if(logos)$
+% $for(logos)$\includegraphics[height = 1.5cm]{$logos$} & $endfor$\\
+% $endif$
+% \includegraphics[height = 1.5cm]{UoA}  &
+% \includegraphics[height = 2.0cm]{GRDC} &
+% \includegraphics[height = 2.0cm]{SARDI} &
+% \includegraphics[height = 1.5cm]{SAGI-STH}
+% \end{tabular}\\[5mm]
+\setlength{\tabcolsep}{6pt}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end titlepage
+
+\clearpage
+$if(book-class)$
+\frontmatter
+$endif$
+$if(toc)$
+\pagestyle{plain}
+\setcounter{page}{1}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\clearpage
+$endif$
+$if(lot)$
+\listoftables
+$endif$
+$if(lof)$
+\listoffigures
+$endif$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+\end{document}
