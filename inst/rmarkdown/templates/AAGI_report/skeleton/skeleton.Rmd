@@ -13,8 +13,9 @@ address:
 email: "your.email@adelaide.edu.au"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 
-# To include a logo of a 
-partner-logo: assets/SAGI-STH
+# To include a logo of a project partner
+# enter it here without the extension
+partner-logo: 
 
 #Latex options
 documentclass: article  # Alternatively book
@@ -38,7 +39,6 @@ output:
 
 ```{r knitr_options, include=FALSE}
 library(rmarkdown)
-library(xtable)
 options(formatR.arrow=FALSE, xtable.comment=FALSE)
 knitr::opts_chunk$set(fig.path='figure/Rplots-',
                       fig.align='center',
