@@ -1,7 +1,7 @@
 Type: Package
 Package: AAGITemplates
 Title: Add AAGI Templates to `New Rmarkdown` Window
-Version: 0.5.0
+Version: 0.6.0
 Authors@R: c(
     person("Sam", "Rogers", email = "sam.rogers@adelaide.edu.au", role = "cre"),
     person("Julian", "Taylor", email = "julian.taylor@adelaide.edu.au", role = "aut"),
@@ -20,4 +20,4 @@ Imports:
     xaringan
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
