@@ -1,7 +1,7 @@
 #' Create a new Biometry Hub Report using a template
 #'
-#' @param filename The filename of the report
-#' @param type The type of the report. Valid types are `biometry_hub_report` (or just `bh_report`), `aagi_report`, `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.
+#' @param filename The filename of the report.
+#' @param type The type of the report. Valid types are `aagi_report`, `biometry_hub_report` (or just `bh_report`), `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.
 #'
 #' @importFrom rmarkdown draft
 #' @importFrom utils file.edit

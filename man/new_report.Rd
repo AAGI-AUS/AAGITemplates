@@ -3,7 +3,7 @@
 \name{new_report}
 \alias{new_report}
 \alias{bh_report}
-\alias{sagi_report}
+\alias{aagi_report}
 \alias{html_presentation}
 \alias{short_report}
 \alias{knitr_report}
@@ -14,7 +14,7 @@ new_report(filename, type)
 
 bh_report(filename)
 
-sagi_report(filename)
+aagi_report(filename)
 
 html_presentation(filename)
 
@@ -25,9 +25,9 @@ knitr_report(filename)
 powerpoint_presentation(filename)
 }
 \arguments{
-\item{filename}{The filename of the report}
+\item{filename}{The filename of the report.}
 
-\item{type}{The type of the report. Valid types are `biometry_hub_report` (or just `bh_report`), `sagi_report`, `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.}
+\item{type}{The type of the report. Valid types are `aagi_report`, `biometry_hub_report` (or just `bh_report`), `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.}
 }
 \value{
 Returns the path to the created file invisibly.
