@@ -9,9 +9,9 @@ Authors@R: c(
     )
 Description: Clicking the RStudio New Rmarkdown button shows a window
     where various Rmarkdown templates can be selected. This package adds
-    AAGI and Biometry Hub reporting templates in this window as an
-    easy way to add required template files such as logos, styling and
-    initialisation scripts when creating a new report.
+    AAGI reporting templates in this window as an easy way to add 
+    required template files such as logos, styling and initialisation 
+    scripts when creating a new report.
 License: MIT + file LICENSE
 Imports: 
     bookdown,
