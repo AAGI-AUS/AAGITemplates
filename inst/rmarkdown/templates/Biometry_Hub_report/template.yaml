@@ -1,4 +1,0 @@
-name: Biometry Hub Report
-description: >
- Template for creating more generic Biometry Hub reports in Rmarkdown (without SAGI-STH logo).
-create_dir: true
