@@ -1,7 +1,9 @@
-#' Create a new Biometry Hub Report using a template
+#' Create a new AAGI Report using a template
 #'
 #' @param filename The filename of the report.
-#' @param type The type of the report. Valid types are `aagi_report`, `biometry_hub_report` (or just `bh_report`), `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.
+#' @param type The type of the report. Valid types are `aagi_report`,
+#'   `html_presentation`, `short_report`, and `knitr_report`.
+#'   Partial matching is performed.
 #'
 #' @importFrom rmarkdown draft
 #' @importFrom utils file.edit
@@ -14,20 +16,15 @@
 #'
 #' @examples
 #' \dontrun{
-#' new_report(filename = "test_report", type = "biometry_hub_report")
+#' new_report(filename = "test_report", type = "aagi_report")
 #' }
 new_report <- function(filename, type) {
   type <- match.arg(tolower(type),
-                    choices = c("biometry_hub_report", "bh_report",
-                                "aagi_report",
-                                "html_presentation", "short_report",
-                                "knitr_report", "powerpoint_presentation"))
+                    choices = c("aagi_report", "html_presentation",
+                                "short_report", "knitr_report"))
 
   ext <- "Rmd"
-  if(type == "biometry_hub_report" || type == "bh_report") {
-    bh_report(filename)
-  }
-  else if(type == "aagi_report") {
+  if(type == "aagi_report") {
     aagi_report(filename)
   }
   else if(type == "html_presentation") {
@@ -47,17 +44,6 @@ new_report <- function(filename, type) {
     stop("type not recognised.")
   }
   invisible(file.path(filename, paste(filename, ext, sep = ".")))
-}
-
-#' @rdname new_report
-bh_report <- function(filename) {
-  rmarkdown::draft(file = filename,
-                   template = "Biometry_Hub_report",
-                   package = "AAGITemplates",
-                   create_dir = TRUE, edit = FALSE)
-  file <- file.path(filename, paste0(filename, ".Rmd"))
-  file.edit(file)
-  invisible(file)
 }
 
 #' @rdname new_report
@@ -111,17 +97,6 @@ knitr_report <- function(filename) {
 
   # Open for editing
   file <- file.path(filename, paste0(filename, ".Rnw"))
-  file.edit(file)
-  invisible(file)
-}
-
-#' @rdname new_report
-powerpoint_presentation <- function(filename) {
-  rmarkdown::draft(file = filename,
-                   template = "powerpoint_presentation",
-                   package = "AAGITemplates",
-                   create_dir = TRUE, edit = FALSE)
-  file <- file.path(filename, paste0(filename, ".Rmd"))
   file.edit(file)
   invisible(file)
 }

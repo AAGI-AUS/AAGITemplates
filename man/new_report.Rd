@@ -2,17 +2,13 @@
 % Please edit documentation in R/new_report.R
 \name{new_report}
 \alias{new_report}
-\alias{bh_report}
 \alias{aagi_report}
 \alias{html_presentation}
 \alias{short_report}
 \alias{knitr_report}
-\alias{powerpoint_presentation}
-\title{Create a new Biometry Hub Report using a template}
+\title{Create a new AAGI Report using a template}
 \usage{
 new_report(filename, type)
-
-bh_report(filename)
 
 aagi_report(filename)
 
@@ -21,22 +17,22 @@ html_presentation(filename)
 short_report(filename)
 
 knitr_report(filename)
-
-powerpoint_presentation(filename)
 }
 \arguments{
 \item{filename}{The filename of the report.}
 
-\item{type}{The type of the report. Valid types are `aagi_report`, `biometry_hub_report` (or just `bh_report`), `html_presentation`, `short_report`, `knitr_report` and `powerpoint_presentation`. Partial matching is performed.}
+\item{type}{The type of the report. Valid types are `aagi_report`,
+`html_presentation`, `short_report`, and `knitr_report`.
+Partial matching is performed.}
 }
 \value{
 Returns the path to the created file invisibly.
 }
 \description{
-Create a new Biometry Hub Report using a template
+Create a new AAGI Report using a template
 }
 \examples{
 \dontrun{
-new_report(filename = "test_report", type = "biometry_hub_report")
+new_report(filename = "test_report", type = "aagi_report")
 }
 }

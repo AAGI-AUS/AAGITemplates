@@ -7,7 +7,7 @@
 Rmarkdown, LaTeX and Knitr reporting templates for AAGI staff.
 
 <!--Previews -->
-|<img src="preview_AAGIreport.jpg" alt="AAGI report preview jpg" width="160px"/><br>AAGI Report|<img src="preview_AAGIreport.jpg" alt="AAGI HTML presentation jpg" width="160px"/><br>AAGI HTML Presentation|<img src="preview_AAGIreport.jpg" alt="AAGI one-page report preview jpg" width="160px"/><br>AAGI One-Page Report|
+|<img src="preview_AAGIreport.jpg" alt="AAGI report preview jpg" width="160px"/><br>AAGI Report|<img src="preview_AAGIreport.jpg" alt="AAGI HTML presentation jpg" width="160px"/><br>AAGI HTML Presentation|<img src="preview_AAGIonepagereport.jpg" alt="AAGI one-page report preview jpg" width="160px"/><br>AAGI One-Page Report|
 |:-:|:-:|:-:|
 
 This package adds templates for AAGI reports and presentations to RStudio, accessible graphically via the `File > New File... > R Markdown...` menu and also via the R Console using the `new_report()` function.

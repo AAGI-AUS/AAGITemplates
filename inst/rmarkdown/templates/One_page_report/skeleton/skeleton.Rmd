@@ -9,8 +9,7 @@ email:
 
 # List logos here as the filename without extension
 logos:
-  - assets/UoA
-  - assets/bhub
+  - assets/AAGI_logo
 
 #Latex options
 header-includes:
@@ -25,7 +24,7 @@ output:
   bookdown::pdf_document2:
     keep_tex: yes
     latex_engine: pdflatex
-    template: assets/SAGI_markdown.tex
+    template: assets/AAGI_markdown.tex
 ---
 
 ```{r knitr_options, include=FALSE}

@@ -1,6 +1,6 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 $if(knit)$
-\usepackage[knit]{assets/SAGI3}
+\usepackage[knit]{assets/AAGI}
 $endif$
 $if(fontfamily)$
 \usepackage{$fontfamily$}
@@ -11,6 +11,19 @@ $endif$
 $if(linestretch)$
 \setstretch{$linestretch$}
 $endif$
+
+% Define the AAGI colour
+\usepackage{xcolor}
+\definecolor{AAGI}{HTML}{00808b}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=AAGI,
+    urlcolor=AAGI
+    }
+
+\usepackage{graphicx}
 
 % Enable shading if it's set, otherwise disable
 $if(highlighting-macros)$
@@ -86,10 +99,12 @@ $else$
 $endif$
 
 % Logos
+\begin{flushright}
 $if(logos)$
-$for(logos)$\includegraphics[height = 1.2cm]{$logos$} \hspace*{0.2cm} $endfor$
+$for(logos)$\includegraphics[height = 1.8cm]{$logos$} \hspace*{0.2cm} $endfor$
 \hfill
 $endif$
+\end{flushright}
 
 % Title and authors
 \Large
