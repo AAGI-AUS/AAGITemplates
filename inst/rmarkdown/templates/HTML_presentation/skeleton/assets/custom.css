@@ -37,7 +37,7 @@
 }
 
 .move-up img {
-  border-radius: 25px; !important
+  border-radius: 25px !important;
 }
 
 .footnote {
@@ -55,10 +55,10 @@
 }
 .remark-slide-content .footnote  p,
 .remark-slide-content .footnote li {
-  font-size: 0.8em!important;
+  font-size: 0.8em !important;
 }
 .footnote .remark-code,
-.footnote .remark-inline-code{ font-size: 0.8em!important; }
+.footnote .remark-inline-code{ font-size: 0.8em !important; }
 
 
 .bgclass {

@@ -1,0 +1,74 @@
+% AAGI slide style for presentations.
+%
+% Code author: Russell A. Edson, AAGI
+% Date last modified: 27/06/2024
+
+\usepackage{graphicx}
+
+% Beamer: Boadilla theme (with AAGI colours/theming)
+\usetheme{Boadilla}
+
+\definecolor{aagiblue}{HTML}{00808b}
+\definecolor{aagigreen}{HTML}{b6d438}
+\definecolor{aagiblack}{HTML}{414042}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+\setbeamerfont{title}{size=\huge}
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{structure}{fg=aagiblue}
+\setbeamercolor{leftfooter}{fg=white, bg=aagiblue!90!black}
+\setbeamercolor{midfooter}{fg=white, bg=aagiblue}
+\setbeamercolor{rightfooter}{fg=white, bg=aagiblue!90!black}
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[%
+      wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{leftfooter}%
+      \insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{%
+        (\insertshortinstitute)}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[%
+      wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{midfooter}%
+      \insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[%
+      wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{rightfooter}%
+      \insertshortdate{}\hspace*{1.0cm}%
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}}%
+    \vskip0pt}
+
+% Title-page as specified for the slider cover in the logo guidelines
+\setbeamertemplate{title page}{%
+  \centering
+  \vspace*{0.4cm}
+  \includegraphics[width=8.5em]{assets/AAGI_logo.pdf}
+  \vspace*{0.45cm}
+  
+  \begingroup  
+  	\usebeamertemplate{title}
+  	\vspace*{-0.2cm}
+  	\usebeamertemplate{author}
+  	\vspace*{-0.3cm}
+  	\usebeamertemplate{date}
+  \endgroup
+  \vspace*{0.1cm}  
+  
+  \makebox[\linewidth]{%
+    \includegraphics[width=1.0\paperwidth]{assets/AAGI_pres_banner.jpg}}
+  \makebox[\linewidth]{%    
+    \includegraphics[width=1.0\paperwidth]{assets/partners.jpg}}}
+
+% Tweak: No 'Figure: ' prefix in figure captions
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+% Slide environment definition
+% This modified frame puts the AAGI logo in the top-right corner,
+% in accordance with the specified logo guidelines.
+\newenvironment{slide}{%
+  \usebackgroundtemplate{%
+    \hspace*{13.4cm}\includegraphics[trim=0 0 0 -0.6cm, width=6em]{%
+      assets/AAGI_logo.pdf}}
+  \begin{frame}[fragile, environment=slide]}{\end{frame}}

@@ -1,0 +1,72 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{assets/AAGIslide}
+
+%% Configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{colortbl}
+
+% URL styling
+\usepackage{url}
+\let\harvardurl\url
+
+% Biblatex for references
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{references.bib}
+
+% Tikzpictures/PGFplots (if desired)
+%\usepackage{tikz}
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=newest}
+
+% Listings for code (if desired)
+%\usepackage{inconsolata}
+%\usepackage{listings}
+%\lstset{%
+%  basicstyle=\footnotesize\ttfamily,
+%  keywordstyle=\foornotesize\ttfamily,
+%  language=R}
+
+
+%% Presentation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Presentation Title]{Your Presentation Title}
+\author[Presenter Name]{Presenter name}
+\institute[AAGI]{Your institution name}
+\date[\today]{\today}
+
+\begin{document}
+  % Title page
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  % Use the slide environment to include the AAGI logo in the top-right.
+  \begin{slide}
+    \frametitle{Slide template including table}
+
+    \begin{itemize}
+      \item Slide text (use itemize/enumerate environments liberally)
+      \item You can colour text/tables/etc using \verb|\color{aagiblue}|
+        for {\color{aagiblue}AAGI blue}, \verb|\color{aagigreen}| for
+        {\color{aagigreen}AAGI green}, and \verb|\color{aagiblack}| for
+        a {\color{aagiblack}slightly lighter black shade} where desired.
+      \item Use \verb|\footnote[frame]{\fullcite{blah}}| to include
+        footnotes at the bottom of the current slide like
+        so.\footnote[frame]{\fullcite{blah}}
+    \end{itemize}
+    
+    A simple AAGI-themed table could be done as follows:
+    \begin{table}
+      \begin{tabular}{| l | r r |}
+      \rowcolor{aagiblue} {\color{white}Table Heading} & %
+      {\color{white}Next Heading} & {\color{white}Another Heading} \\
+      \hline
+      blah & 2 & 3 \\
+      \hline
+      \end{tabular}
+    \end{table}
+  \end{slide}
+
+\end{document}
