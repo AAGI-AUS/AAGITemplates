@@ -1,8 +1,6 @@
 ---
 title: "Your Presentation Title"
-subtitle: "University of Adelaide Biometry Hub"
-author: Your Name
-institute: http://ua.edu.au/biometryhub
+author: Presenter name
 date: "`r format(Sys.Date(), '%d %B %Y')`"  # E.g. 28 March 2022
 output:
   xaringan::moon_reader:
@@ -20,7 +18,7 @@ output:
 
 class: bgclass
 layout: true
-<!-- Sets the background class to be the Biometry Hub image -->
+<!-- Sets the background class to be the AAGI logo slide background -->
 
 ---
 
@@ -47,11 +45,11 @@ Here are some notes for this slide
 
 # Changing backgrounds
 
-- Just swap in a different image and name it the same as the current one (`title_bg.png` for the title slide, or `slide_bg_16_9.png`/`slide_bg.png` for the regular slides.)
+- Just swap in a different image and name it the same as the current one (`title_bg.jpg` for the title slide, or `slide_bg.jpg` for the regular slides.)
 
 --
 
-- If you need to change logos, you will need to edit the `custom.css` file. The second line of the file lists the logos on the title slide.
+- If you need to change logos (e.g., to add in a project partner), you will need to edit the `custom.css` file. Change `partners.jpg` to `project_partner.jpg` (in the `.title-slide background-image:` attribute) and modify the `project_partner.jpg` to include the partner logo in the space provided.
 
 ---
 

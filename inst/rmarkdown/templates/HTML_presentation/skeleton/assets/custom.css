@@ -1,11 +1,23 @@
 .title-slide {
-  background-image: url(UoA.png), url(GRDC.png), url(bhub.png), url(title_bg.png);
-  background-position: 3% 95%, 22% 94%, 37% 95%, 0% 0%;
-  background-size: 15%, 13%, 8%, 100%;
+  background-image: url(partners.jpg), url(title_bg.jpg);
+  background-position: 0px 583px, 0% 0%;
+  background-size: 100%, 100%;
 }
 
 .title-slide h1, h2, h3, h4 {
   background-color: transparent !important;
+}
+
+.title {
+  margin-top: -150px;  /* Move the title up a bit */
+}
+
+.author {
+  margin-top: -20px;
+}
+
+.date {
+  margin-top: -20px;
 }
 
 .remark-slide-content {
@@ -50,7 +62,7 @@
 
 
 .bgclass {
-  background-image: url("slide_bg_16_9.jpg");
+  background-image: url("slide_bg.jpg");
   background-position: center;
   background-size: contain;
 }
@@ -59,3 +71,11 @@
     padding-top: 5px !important;
     padding-bottom: 5px !important;
 }*/
+
+.remark-slide-number {
+  bottom: 0px;
+  opacity: 1.0;
+  font-size: medium;
+  color: #ffffff;
+  right: 30px;
+}
