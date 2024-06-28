@@ -1,9 +1,16 @@
 #' Create a new AAGI Report using a template
 #'
 #' @param filename The filename of the report.
-#' @param type The type of the report. Valid types are `aagi_report`,
-#'   `html_presentation`, `short_report`, and `knitr_report`.
-#'   Partial matching is performed.
+#' @param type The type of the report. Partial matching is performed.
+#'   * `aagi_report` (default): A full AAGI report using Rmarkdown.
+#'   * `html_presentation`: An AAGI slide presentation in HTML, 
+#'     using Rmarkdown/xaringan.
+#'   * `short_report`: A short one-page AAGI report using Rmarkdown.
+#'   * `knitr_report`: A full AAGI report using knitr.
+#'   * `latex_report`: A full AAGI report using LaTeX (without embedded
+#'      R/chunks).
+#'   * `beamer_presentation`: An AAGI slide presentation in LaTeX,
+#'     using Beamer (without embedded R/chunks).
 #'
 #' @importFrom rmarkdown draft
 #' @importFrom utils file.edit
@@ -18,35 +25,48 @@
 #' \dontrun{
 #' new_report(filename = "test_report", type = "aagi_report")
 #' }
-new_report <- function(filename, type) {
+#' @md
+new_report <- function(filename,
+    type = c("aagi_report", "html_presentation", "short_report",
+      "knitr_report", "latex_report", "beamer_presentation")) {
+  # Partial matching to given report type
   type <- match.arg(tolower(type),
-                    choices = c("aagi_report", "html_presentation",
-                                "short_report", "knitr_report"))
+    choices = c("aagi_report", "html_presentation", "short_report",
+      "knitr_report", "latex_report", "beamer_presentation")
+  )
 
   ext <- "Rmd"
-  if(type == "aagi_report") {
+  if (type[1] == "aagi_report") {
     aagi_report(filename)
   }
-  else if(type == "html_presentation") {
+  else if (type[1] == "html_presentation") {
     html_presentation(filename)
   }
-  else if(type == "short_report") {
+  else if (type[1] == "short_report") {
     short_report(filename)
   }
-  else if(type == "knitr_report") {
+  else if (type[1] == "knitr_report") {
     knitr_report(filename)
     ext <- "Rnw"
   }
-  else if(type == "powerpoint_presentation") {
-    powerpoint_presentation(filename)
+  else if (type[1] == "latex_report") {
+    latex_report(filename)
+    ext <- "tex"
   }
+  else if (type[1] == "beamer_presentation") {
+    beamer_presentation(filename)
+    ext <- "tex"
+  }
+  #else if (type == "powerpoint_presentation") {
+  #  powerpoint_presentation(filename)
+  #}
   else {
     stop("type not recognised.")
   }
   invisible(file.path(filename, paste(filename, ext, sep = ".")))
 }
 
-#' @rdname new_report
+#' @noRd
 aagi_report <- function(filename) {
   rmarkdown::draft(file = filename,
                    template = "AAGI_report",
@@ -57,7 +77,7 @@ aagi_report <- function(filename) {
   invisible(file)
 }
 
-#' @rdname new_report
+#' @noRd
 html_presentation <- function(filename) {
   rmarkdown::draft(file = filename,
                    template = "HTML_presentation",
@@ -68,7 +88,7 @@ html_presentation <- function(filename) {
   invisible(file)
 }
 
-#' @rdname new_report
+#' @noRd
 short_report <- function(filename) {
   rmarkdown::draft(file = filename,
                    template = "one_page_report",
@@ -79,10 +99,10 @@ short_report <- function(filename) {
   invisible(file)
 }
 
-#' @rdname new_report
+#' @noRd
 knitr_report <- function(filename) {
   # create folder
-  if(!dir.exists(filename)) {
+  if (!dir.exists(filename)) {
     dir.create(trimws(filename))
   }
 
@@ -99,4 +119,10 @@ knitr_report <- function(filename) {
   file <- file.path(filename, paste0(filename, ".Rnw"))
   file.edit(file)
   invisible(file)
+}
+
+#' @noRd
+latex_report <- function(filename) {
+  # create folder
+  NULL
 }

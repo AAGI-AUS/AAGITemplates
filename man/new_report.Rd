@@ -2,28 +2,29 @@
 % Please edit documentation in R/new_report.R
 \name{new_report}
 \alias{new_report}
-\alias{aagi_report}
-\alias{html_presentation}
-\alias{short_report}
-\alias{knitr_report}
 \title{Create a new AAGI Report using a template}
 \usage{
-new_report(filename, type)
-
-aagi_report(filename)
-
-html_presentation(filename)
-
-short_report(filename)
-
-knitr_report(filename)
+new_report(
+  filename,
+  type = c("aagi_report", "html_presentation", "short_report", "knitr_report",
+    "latex_report", "beamer_presentation")
+)
 }
 \arguments{
 \item{filename}{The filename of the report.}
 
-\item{type}{The type of the report. Valid types are `aagi_report`,
-`html_presentation`, `short_report`, and `knitr_report`.
-Partial matching is performed.}
+\item{type}{The type of the report. Partial matching is performed.
+\itemize{
+\item \code{aagi_report} (default): A full AAGI report using Rmarkdown.
+\item \code{html_presentation}: An AAGI slide presentation in HTML,
+using Rmarkdown/xaringan.
+\item \code{short_report}: A short one-page AAGI report using Rmarkdown.
+\item \code{knitr_report}: A full AAGI report using knitr.
+\item \code{latex_report}: A full AAGI report using LaTeX (without embedded
+R/chunks).
+\item \code{beamer_presentation}: An AAGI slide presentation in LaTeX,
+using Beamer (without embedded R/chunks).
+}}
 }
 \value{
 Returns the path to the created file invisibly.
