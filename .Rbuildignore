@@ -1,6 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-Readme.md
+README.md
 todo.md
 ^.*\.html
 libs/*

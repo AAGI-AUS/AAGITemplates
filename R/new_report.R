@@ -66,6 +66,7 @@ new_report <- function(filename,
   invisible(file.path(filename, paste(filename, ext, sep = ".")))
 }
 
+#' AAGI full report in Rmarkdown
 #' @noRd
 aagi_report <- function(filename) {
   rmarkdown::draft(file = filename,
@@ -77,6 +78,7 @@ aagi_report <- function(filename) {
   invisible(file)
 }
 
+#' AAGI slide presentation in HTML/xaringan
 #' @noRd
 html_presentation <- function(filename) {
   rmarkdown::draft(file = filename,
@@ -88,6 +90,7 @@ html_presentation <- function(filename) {
   invisible(file)
 }
 
+#' AAGI short/one-page report in Rmarkdown
 #' @noRd
 short_report <- function(filename) {
   rmarkdown::draft(file = filename,
@@ -99,6 +102,7 @@ short_report <- function(filename) {
   invisible(file)
 }
 
+#' AAGI full report in knitr
 #' @noRd
 knitr_report <- function(filename) {
   # create folder
@@ -106,8 +110,11 @@ knitr_report <- function(filename) {
     dir.create(trimws(filename))
   }
 
-  files <- list.files(file.path(find.package("AAGITemplates"),
-                     "inst", "rmarkdown", "templates", "Knitr"), full.names = TRUE)
+  files <- list.files(
+    file.path(find.package("AAGITemplates"),
+      "rmarkdown", "templates", "Knitr"),
+    full.names = TRUE
+  )
   # copy template and assets into folder
   file.copy(from = files, to = filename, recursive = TRUE)
 
@@ -121,8 +128,54 @@ knitr_report <- function(filename) {
   invisible(file)
 }
 
+#' AAGI full report in LaTeX
 #' @noRd
 latex_report <- function(filename) {
   # create folder
-  NULL
+  if (!dir.exists(filename)) {
+    dir.create(trimws(filename))
+  }
+
+  files <- list.files(
+    file.path(find.package("AAGITemplates"),
+      "rmarkdown", "templates", "LaTeX"),
+    full.names = TRUE
+  )
+  # copy template and assets into folder
+  file.copy(from = files, to = filename, recursive = TRUE)
+  
+  # rename template
+  file.rename(from = file.path(filename, "report.tex"),
+              to = file.path(filename, paste0(filename, ".tex")))
+  
+  # open for editing
+  file <- file.path(filename, paste0(filename, ".tex"))
+  file.edit(file)
+  invisible(file)
+}
+
+#' AAGI slide presentation in LaTeX/Beamer
+#' @noRd
+beamer_presentation <- function(filename) {
+  # create folder
+  if (!dir.exists(filename)) {
+    dir.create(trimws(filename))
+  }
+
+  files <- list.files(
+    file.path(find.package("AAGITemplates"),
+      "rmarkdown", "templates", "beamer_presentation"),
+    full.names = TRUE
+  )
+  # copy template and assets into folder
+  file.copy(from = files, to = filename, recursive = TRUE)
+
+  # rename template
+  file.rename(from = file.path(filename, "presentation.tex"),
+              to = file.path(filename, paste0(filename, ".tex")))
+  
+  # open for editing
+  file <- file.path(filename, paste0(filename, ".tex"))
+  file.edit(file)
+  invisible(file)
 }
