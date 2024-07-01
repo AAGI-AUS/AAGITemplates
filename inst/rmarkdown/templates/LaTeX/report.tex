@@ -1,107 +1,189 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-\documentclass[oneside,12pt]{book}
+\documentclass[12pt]{article}
+\usepackage{assets/AAGI}
 
-\usepackage{SAGI3}
+%% Configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[title]{appendix}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
+% AAGI colours
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\definecolor{aagiblue}{HTML}{00808b}
+\definecolor{aagigreen}{HTML}{b6d438}
+\definecolor{aagiblack}{HTML}{414042}
+
+% Colour tables + long tables
+\usepackage{colortbl}
+
+\usepackage{longtable}
+\setlength{\LTcapwidth}{\textwidth}
+
+% Figures configuration
+\usepackage{caption}
+\captionsetup{font={sf}}
+\setlength{\fboxsep}{0pt}
+
+% URL styling
+\usepackage{url}
+\let\harvardurl\url
+
+% Tikzpictures/PGFplots (if desired)
+%\usepackage{tikz}
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=newest}
+
+% Listings for code (if desired)
+%\usepackage{inconsolata}
+%\usepackage{listings}
+%\lstset{%
+%  basicstyle=\footnotesize\ttfamily,
+%  keywordstyle=\footnotesize\ttfamily,
+%  language=R}
+
+% A fancy coloured box for notes/warnings
+\usepackage[most]{tcolorbox}
+\newtcolorbox{note}[1][]{%
+  colback=aagiblue!7, colframe=aagiblue!7, notitle, sharp corners,
+  borderline west={2pt}{0pt}{aagiblue}, borderline east={2pt}{0pt}{aagiblue},
+  enhanced, breakable}
+
+% Hyperref for links/cross-referencing
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=true, linkcolor=aagiblue, urlcolor=aagiblue}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Subsection}
+\def\appendixautorefname{Appendix}
+\def\figureautorefname{Figure}
+\def\tableautorefname{Table}
+
+
+%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+  \frontmatter
 
-\frontmatter
+  %% Title page
+  \thispagestyle{empty}
+  \vspace*{-30mm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start titlepage
+  \begin{center}
+    \includegraphics[height=3cm]{assets/AAGI_logo.pdf}    
+  \end{center}
 
-\thispagestyle{empty}
-\vspace*{25mm}
-\begin{flushright}
-\HRule\\[5mm]
+  \vfill
+  
 
-%%% logos go here ...
+  \begin{flushright}
+    \HRule\\[5mm]
 
-\begin{tabular}{rrrr}
-\includegraphics[height = 1.5cm]{UoA}  &
-\includegraphics[height = 2.0cm]{GRDC} &
-\includegraphics[height = 2.0cm]{SARDI} &
-\includegraphics[height = 1.5cm]{SAGI-STH}
-\end{tabular}\\[5mm]
+    \huge
+    \textcolor{aagiblue}{\sbf Analytics for the Australian Grains\\
+      Industry - University of Adelaide\\
+      (AAGI-UA)\\
+      Technical Report Series: 123}\\[6mm]
 
-\huge
-\textcolor{blue}{\sbf Statistics for the Australian\\
-Grains Industry (Southern Region)\\ Technical Report Series: SS001} \\[6mm]
+    {\sbf Informative title for report}\\
+    \Large
+    \vspace{2mm}{\sbf Report for $<$Project Number$>$}\\[5mm]
 
-{\sbf Informative report title}\\
-\Large
-\vspace{2mm}{\sbf Report for UA000001}\\[5mm]
+    \sf\normalsize
+    \textbf{Your Name}\\
+    Name 2\\
+    Name 3\\
+    \vspace*{0.4cm}
+    email:\; \texttt{%
+      \href{mailto:your.email@adelaide.edu.au}%
+      {your.email@adelaide.edu.au}}\\[8mm]
+      
+    \today\\
+    \HRule
+  \end{flushright}
 
-\sf\normalsize
-Julian Taylor\\
-Senior Biometrician, SAGI-STH\\
-PMB 1 Glen Osmond 5064\\
-email: julian.taylor@adelaide.edu.au\\[8mm]
+  \vfill
 
-\today\\
-\HRule
-\end{flushright}
+  \noindent\makebox[\textwidth]{%
+    \includegraphics[width=\paperwidth]{assets/Partners.pdf}}
+  \vspace*{-30mm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end titlepage
+  
+  \clearpage
+  \pagestyle{plain}
+  \setcounter{page}{1}
+  \tableofcontents
 
-\clearpage
-\pagestyle{plain}
-\setcounter{page}{1}
-\tableofcontents
+  \clearpage
+  \section*{Executive Summary}
+  \addcontentsline{toc}{section}{Executive summary}
+  Executive summary goes here.
+  
 
-%% other lists of tables or figures
+  \mainmatter
+  \pagestyle{fancy}
 
-%\listoftables
-%\addcontentsline{toc}{chapter}{List of Tables}
-%\listoffigures
-%\addcontentsline{toc}{chapter}{List of Figures}
-\clearpage
+  \clearpage
+  \section{This is a section}
+  
+  Report body text goes here. Use \verb|\citep{blah}| for parenthetical
+  citations: \citep{blah}. Use \verb|\citet{blah}| for text citations, e.g.
+  \citet{blah}.
+  
+  You can colour text/tables/etc using \verb|\color{aagiblue}|
+  for {\color{aagiblue}AAGI blue}, \verb|\color{aagigreen}| for
+  {\color{aagigreen}AAGI green}, and \verb|\color{aagiblack}| for
+  a {\color{aagiblack}slightly lighter black shade} where desired.
+  
+  A simple AAGI-themed table could be done as in \autoref{tab:aagi}.
+  \begin{table}[h]
+    \caption{An AAGI-themed table.}\label{tab:aagi}
+    \centering
+    \begin{tabular}{| l | r r |}
+    \rowcolor{aagiblue} {\color{white}Table Heading} & %
+    {\color{white}Next Heading} & {\color{white}Another Heading} \\
+    \hline
+    blah & 2 & 3 \\
+    \hline
+    \end{tabular}
+  \end{table}
 
-\section*{Executive Summary}
-\addcontentsline{toc}{section}{Executive summary}
+  \subsection{This is a subsection}
+  
+  Use \verb|\begin{note} ... \end{note}| for emphatic notes throughout
+  the report if you like.
+  
+  \begin{note}
+    {\sbf\color{aagiblue!75!black} Example Note}\quad
+    This is an example of a note.
+  \end{note}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Start document
+  \subsubsection{This is a subsubsection}
 
-\mainmatter
-\pagestyle{fancy}
+  \clearpage
+  \section{This is another section}
+  Etc.
 
-%%%%%%%%%%%% Book class
 
-\chapter{Chapter 1}
+  % Blank page then Appendices
+  \cleardoublepage
+  \phantom{text}
+  \addcontentsline{toc}{section}{Appendices}
+  \begin{appendices}
+    \clearpage
+    \section{This is an appendix}
+    
+    \subsection{This is an appendix subsection}
 
-\section{This is a section heading}
+    \clearpage
+    \section{This is another appendix}
+    And so on.
+  \end{appendices}
 
-\subsection{This is a subsection heading}
-
-\subsubsection{This is a subsubsection heading}
-
-\chapter{Next Chapter}
-
-This shows a smooth transition to the next chapter.
-
-\addcontentsline{toc}{chapter}{References}
-\bibliographystyle{biom}
-\bibliography{references}
-
-%%%%%%%%%%%% Article class
-
-% \section{This is a section heading}
-
-% \subsection{This is a subsection heading}
-
-% \subsubsection{This is a subsubsection heading}
-
-% \section{Next section heading}
-
-% This shows a smooth transition to the next chapter.
-
-% \addcontentsline{toc}{section}{References}
-% \bibliographystyle{biom}
-% \bibliography{references}
-
-%%%%%%%%%%%%
-
+  % Bibliography
+  \clearpage
+  \addcontentsline{toc}{section}{References}
+  \bibliographystyle{assets/biom}
+  \bibliography{references}
 \end{document}
