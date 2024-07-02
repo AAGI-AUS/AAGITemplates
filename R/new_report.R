@@ -3,7 +3,7 @@
 #' @param filename The filename of the report.
 #' @param type The type of the report. Partial matching is performed.
 #'   * `aagi_report` (default): A full AAGI report using Rmarkdown.
-#'   * `html_presentation`: An AAGI slide presentation in HTML, 
+#'   * `html_presentation`: An AAGI slide presentation in HTML,
 #'     using Rmarkdown/xaringan.
 #'   * `short_report`: A short one-page AAGI report using Rmarkdown.
 #'   * `knitr_report`: A full AAGI report using knitr.
@@ -94,7 +94,7 @@ html_presentation <- function(filename) {
 #' @noRd
 short_report <- function(filename) {
   rmarkdown::draft(file = filename,
-                   template = "one_page_report",
+                   template = "One_page_report",
                    package = "AAGITemplates",
                    create_dir = TRUE, edit = FALSE)
   file <- file.path(filename, paste0(filename, ".Rmd"))
@@ -143,11 +143,11 @@ latex_report <- function(filename) {
   )
   # copy template and assets into folder
   file.copy(from = files, to = filename, recursive = TRUE)
-  
+
   # rename template
   file.rename(from = file.path(filename, "report.tex"),
               to = file.path(filename, paste0(filename, ".tex")))
-  
+
   # open for editing
   file <- file.path(filename, paste0(filename, ".tex"))
   file.edit(file)
@@ -173,7 +173,7 @@ beamer_presentation <- function(filename) {
   # rename template
   file.rename(from = file.path(filename, "presentation.tex"),
               to = file.path(filename, paste0(filename, ".tex")))
-  
+
   # open for editing
   file <- file.path(filename, paste0(filename, ".tex"))
   file.edit(file)

@@ -2,14 +2,11 @@
 # Report details
 title: "Progress report for project ..."
 subtitle: "Subtitle here"
+project-number: UOA8888-123ABC
 author: 
 - Author 1
 - Author 2
-email: 
-
-# List logos here as the filename without extension
-logos:
-  - assets/AAGI_logo
+email: your.email@adelaide.edu.au
 
 #Latex options
 header-includes:
@@ -44,6 +41,15 @@ knitr::opts_chunk$set(fig.path='figure/Rplots-',
 ```
 
 # Section 1
+
+Report text goes here. This template is designed for smaller
+("one page") reports. The AAGI logo and partners footer appear
+only on this first page.
+
+You can colour text/tables/etc using `\textcolor{aagiblue}` for
+\textcolor{aagiblue}{AAGI blue}, `\textcolor{aagigreen}` for
+\textcolor{aagigreen}{AAGI green}, and `\textcolor{aagiblack}` for a
+\textcolor{aagiblack}{slightly light shade of black} as you like.
 
 ## This is a subsection heading
 

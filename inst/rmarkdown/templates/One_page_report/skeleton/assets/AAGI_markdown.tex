@@ -13,14 +13,16 @@ $if(linestretch)$
 $endif$
 
 % Define the AAGI colour
-\usepackage{xcolor}
-\definecolor{AAGI}{HTML}{00808b}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{aagiblue}{HTML}{00808b}
+\definecolor{aagigreen}{HTML}{b6d438}
+\definecolor{aagiblack}{HTML}{414042}
 
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=AAGI,
-    urlcolor=AAGI
+    linkcolor=aagiblue,
+    urlcolor=aagiblue
     }
 
 \usepackage{graphicx}
@@ -76,20 +78,40 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
-\begin{document}
+% Logos and partners in the header/footer
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{a4paper, left=12mm, right=12mm, top=16mm, bottom=20mm}
+\usepackage{afterpage}
+\fancypagestyle{firstpage}{%
+  \fancyhf{}
+  \fancyhead[R]{%
+    \noindent\makebox[\textwidth][r]{%
+    \includegraphics[height = 2.0cm]{assets/AAGI_logo.pdf}}\hspace*{-0.6cm}
+  }
+  \fancyfoot[C]{%
+    \rule{\textwidth}{0.4pt}\\[-10pt]
+    \noindent\makebox[\textwidth]{%
+	  \includegraphics[width=\paperwidth]{assets/Partners.pdf}}}
+  \renewcommand{\headrulewidth}{0pt}
+}
 
-$if(project-number)$
-% Set up header and footer
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{Project number: $project-number$}
-\cfoot{\thepage}
-$if(email)$
-\lfoot{Contact email:\;$email$}
-$endif$
-$else$
-\pagestyle{plain}
-$endif$
+\fancypagestyle{projectnum}{%
+  \fancyhf{}
+  $if(project-number)$
+    \rhead{{\sf Project number: $project-number$}}
+  $endif$
+  $if(email)$
+    \lfoot{{\sf Contact email:\;$email$}}
+  $endif$
+  \cfoot{\thepage}
+}
+
+\begin{document}
+\pagestyle{projectnum}
+\thispagestyle{firstpage}
+\newgeometry{a4paper, left=12mm, right=12mm, top=20mm, bottom=24mm, includefoot}
+\afterpage{\aftergroup\restoregeometry}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% start titlepage
 
 $if(colspace)$
@@ -97,14 +119,6 @@ $if(colspace)$
 $else$
 \setlength{\tabcolsep}{12pt}
 $endif$
-
-% Logos
-\begin{flushright}
-$if(logos)$
-$for(logos)$\includegraphics[height = 1.8cm]{$logos$} \hspace*{0.2cm} $endfor$
-\hfill
-$endif$
-\end{flushright}
 
 % Title and authors
 \Large
