@@ -12,13 +12,13 @@
 %% knitr inclusion
 
 \RequirePackage{ifthen}
-\newboolean{SAGI@knit}
-\setboolean{SAGI@knit}{true}
+\newboolean{AAGI@knit}
+\setboolean{AAGI@knit}{true}
 
-\DeclareOption{knit}{\setboolean{SAGI@knit}{false}}
+\DeclareOption{knit}{\setboolean{AAGI@knit}{false}}
 \ProcessOptions
 
-\ifthenelse{\boolean{SAGI@knit}}{
+\ifthenelse{\boolean{AAGI@knit}}{
    \PDFPackage{graphicx}
    \PDFPackage{color}
 }{}
@@ -174,7 +174,7 @@
 
 %% ripped from jss.cls; does nice printing of R commands for input and output
 
-\ifthenelse{\boolean{SAGI@knit}}{%
+\ifthenelse{\boolean{AAGI@knit}}{%
 \DefineVerbatimEnvironment{Rinput}{Verbatim}{fontshape=sl,fontsize =\small}
 \DefineVerbatimEnvironment{Routput}{Verbatim}{fontsize=\small}
 \DefineVerbatimEnvironment{Rcode}{Verbatim}{fontshape=sl,fontsize=\small}

@@ -12,20 +12,19 @@
 %% knitr inclusion
 
 \RequirePackage{ifthen}
-\newboolean{SAGI@knit}
-\setboolean{SAGI@knit}{true}
+\newboolean{AAGI@knit}
+\setboolean{AAGI@knit}{true}
 
-\DeclareOption{knit}{\setboolean{SAGI@knit}{false}}
+\DeclareOption{knit}{\setboolean{AAGI@knit}{false}}
 \ProcessOptions
 
-\ifthenelse{\boolean{SAGI@knit}}{
+\ifthenelse{\boolean{AAGI@knit}}{
    \PDFPackage{graphicx}
    \PDFPackage{color}
 }{}
 
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage{bbm}
 
 % \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 % \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -50,7 +49,7 @@
 
 \PDFPackage{hyperref}
 \hypersetup{colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue}
-\usepackage[paper=a4paper,top=15mm,left=20mm,right=20mm,bottom=25mm]{geometry}
+\usepackage[paper=a4paper,top=35mm,left=25mm,right=25mm,bottom=30mm]{geometry}
 \setlength{\parindent}{0cm}
 \setlength{\headheight}{15pt}
 \setlength{\parskip}{3ex}
@@ -88,20 +87,20 @@
 
 %% set up fancy headings
 
-% \pagestyle{fancy}
-% \renewcommand{\sectionmark}[1]{\markboth{\thesection\hspace{2.5mm} #1}{}}
-% \fancyhf{}
-% \fancyhead[L]{\sffamily\bfseries\leftmark}
-% \fancyfoot[C]{\sffamily \thepage}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{\thesection\hspace{2.5mm} #1}{}}
+\fancyhf{}
+\fancyhead[L]{\sffamily\bfseries\leftmark}
+\fancyfoot[C]{\sffamily \thepage}
 
 \@ifclassloaded{book}{
 
-% \pagestyle{fancy}
-% \pagenumbering{roman}
-% \renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace{2.5mm} #1}{}}
-% \fancyhf{}
-% \fancyhead[L]{\sffamily\bfseries\leftmark}
-% \fancyfoot[C]{\sffamily \thepage}
+\pagestyle{fancy}
+\pagenumbering{roman}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace{2.5mm} #1}{}}
+\fancyhf{}
+\fancyhead[L]{\sffamily\bfseries\leftmark}
+\fancyfoot[C]{\sffamily \thepage}
 
 \renewcommand{\chaptername}{}
 
@@ -175,7 +174,7 @@
 
 %% ripped from jss.cls; does nice printing of R commands for input and output
 
-\ifthenelse{\boolean{SAGI@knit}}{%
+\ifthenelse{\boolean{AAGI@knit}}{%
 \DefineVerbatimEnvironment{Rinput}{Verbatim}{fontshape=sl,fontsize =\small}
 \DefineVerbatimEnvironment{Routput}{Verbatim}{fontsize=\small}
 \DefineVerbatimEnvironment{Rcode}{Verbatim}{fontshape=sl,fontsize=\small}
