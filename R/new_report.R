@@ -94,7 +94,7 @@ html_presentation <- function(filename) {
 #' @noRd
 short_report <- function(filename) {
   rmarkdown::draft(file = filename,
-                   template = "One_page_report",
+                   template = "AAGI_short_report",
                    package = "AAGITemplates",
                    create_dir = TRUE, edit = FALSE)
   file <- file.path(filename, paste0(filename, ".Rmd"))
