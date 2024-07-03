@@ -16,5 +16,5 @@ Install this R package with:
 
 ```{r eval = FALSE}
 if(!require("remotes")) install.packages("remotes") 
-remotes::install_github("biometryhub/AAGITemplates", upgrade = FALSE)
+remotes::install_github("AAGI-Org-AU-Public/AAGITemplates", upgrade = FALSE)
 ```
