@@ -1,0 +1,77 @@
+---
+params:
+  
+  # Report details
+  university: "University of Queensland (AAGI-UQ)"
+  title: "Your title for this report"
+  project_number: "456"
+  author: "John Doe"
+  coauthor1: "Jane Doe"
+  coauthor2: "Jack Smith"
+  email: "john.doe@uq.edu.au"
+  date: !r Sys.Date()
+  list_figures: true # Set to false to exclude list of figures
+  list_tables: true # Set to false to exclude list of tables
+  
+output: 
+  officedown::rdocx_document:
+    base_format: bookdown::word_document2
+    reference_docx: assets/report.docx
+    
+    # To define specific style of tables and plots
+    # tables:
+    #   style: Table AAGI
+    # plots:
+    #   style: Figure Style
+---
+
+```{r cover_options, echo=FALSE, warning=FALSE, message=FALSE}
+require(officer)
+require(officedown)
+doc <- read_docx("assets/coverpage.docx")
+
+# insert text after heading
+doc <- body_replace_all_text(doc, "<University>", params$university)
+doc <- body_replace_all_text(doc, "<Informative title for report>", params$title)
+doc <- body_replace_all_text(doc, "<Project Number>", params$project_number)
+doc <- body_replace_all_text(doc, "<Your Name>", params$author)
+doc <- body_replace_all_text(doc, "<Name 2>", params$coauthor1)
+doc <- body_replace_all_text(doc, "<Name 3>", params$coauthor2)
+doc <- body_replace_all_text(doc, "your.email@org.edu.au", params$email)
+doc <- body_replace_all_text(doc, "<Date>", format(params$date, format = "%B %d, %Y"))
+
+# save result to different location for ease of verification
+print(doc, "assets/temp_coverpage.docx")
+```
+
+```{r cover_section, echo=FALSE, results='asis'}
+cat(knitr::knit_child('assets/header.Rmd', quiet = TRUE), sep = '\n')
+```
+
+# Executive summary {.unnumbered}
+
+Executive summary goes here.
+
+\pagebreak
+
+# This is a section
+
+Report body text goes here. Use theme colours for emphasis if you like (AAGI blue: #00808b, AAGI green: #b6d438, AAGI black: #414042).
+
+## This is a subsection
+
+Example R code Project
+
+```{r example1, fig.cap="This is a plot caption"}
+plot(pressure)
+```
+
+### This is a subsubsection heading
+
+# This is another section
+
+Etc.
+
+\newpage
+
+# References {.unnumbered}
