@@ -1,0 +1,30 @@
+
+```{asis}
+<!---BLOCK_POUR_DOCX{file: 'assets/temp_coverpage.docx'}--->
+\pagebreak
+
+::: {custom-style="TOC"}
+Contents
+:::
+
+<!---BLOCK_TOC{level: 5}--->
+```
+
+
+```{asis, echo=params$list_figures}
+::: {custom-style="TOC"}
+List of figures
+:::
+
+<!---BLOCK_TOC{seq_id: 'fig'}--->
+```
+
+```{asis, echo=params$list_tables}
+::: {custom-style="TOC"}
+List of tables
+:::
+
+<!---BLOCK_TOC{seq_id: 'tab'}--->
+```
+
+\pagebreak
