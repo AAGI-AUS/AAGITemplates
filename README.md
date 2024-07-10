@@ -23,7 +23,7 @@ remotes::install_github("AAGI-Org-AU-Public/AAGITemplates", upgrade = FALSE)
 The AAGI report/presentation templates for Microsoft Word and Microsoft PowerPoint can be installed easily by the following steps.
 
 1. Download the .dotx and .potx template files from this GitHub directory to your machine:
-    - [AAGI Report Template](<inst/rmarkdown/templates/Word_report/AAGI Report Template.dotx>)
-    - [AAGI Short Report Template](<inst/rmarkdown/templates/Word_report/AAGI Short Report Template.dotx>)
-    - [AAGI PowerPoint Presentation](<inst/rmarkdown/templates/PowerPoint_presentation/AAGI PowerPoint Presentation.potx>)
+    - [AAGI Report Template](<https://github.com/AAGI-Org-AU-Public/AAGITemplates/raw/master/inst/rmarkdown/templates/Word_report/AAGI Report Template.dotx>)
+    - [AAGI Short Report Template](<https://github.com/AAGI-Org-AU-Public/AAGITemplates/raw/master/inst/rmarkdown/templates/Word_report/AAGI Short Report Template.dotx>)
+    - [AAGI PowerPoint Presentation](<https://github.com/AAGI-Org-AU-Public/AAGITemplates/raw/master/inst/rmarkdown/templates/PowerPoint_presentation/AAGI PowerPoint Presentation.potx>)
 
