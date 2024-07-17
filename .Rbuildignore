@@ -2,5 +2,4 @@
 ^\.Rproj\.user$
 README.md
 todo.md
-^.*\.html
 libs/*
