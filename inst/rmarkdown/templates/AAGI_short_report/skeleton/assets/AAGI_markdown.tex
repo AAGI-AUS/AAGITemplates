@@ -79,15 +79,12 @@ $header-includes$
 $endfor$
 
 % Logos and partners in the header/footer
-\usepackage{fancyhdr}
-\usepackage{geometry}
-\geometry{a4paper, left=12mm, right=12mm, top=22mm, bottom=22mm}
 \usepackage{afterpage}
 \fancypagestyle{firstpage}{%
   \fancyhf{}
   \fancyhead[R]{%
     \noindent\makebox[\textwidth][r]{%
-    \includegraphics[height = 2.0cm]{assets/AAGI_logo.pdf}}\hspace*{-0.6cm}
+    \includegraphics[height = 2.3cm]{assets/AAGI_logo.pdf}\hspace*{-0.5cm}}
   }
   \fancyfoot[C]{%
     \rule{\textwidth}{0.4pt}\\[-10pt]
@@ -126,13 +123,20 @@ $endif$
 $if(subtitle)$
 {\sf\normalsize $subtitle$}
 $else$
+\phantom{text}\\[-40pt]
 $endif$
 
 \sf\normalsize{
 $if(author)$
 $for(author)$$author$$sep$, $endfor$\newline
 $endif$
-}
+}\\[-34pt]
+
+\sf\normalsize{
+$if(email)$
+Contact email:\;$email$
+$endif$
+}\\[-20pt]
 
 Last updated $if(date)$
 $date$
