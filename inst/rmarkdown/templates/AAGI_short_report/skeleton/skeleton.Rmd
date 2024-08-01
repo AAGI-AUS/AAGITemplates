@@ -11,7 +11,7 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 email: your.email@institution.edu.au
 version-number: 1.0.0
 
-# Style options (Page size, Table of Contents, Section numbers, etc)
+# Style options (Page/font size, Table of Contents, Section numbers, ..)
 fontsize: 12pt
 papersize: a4
 toc: no
@@ -48,6 +48,12 @@ knitr::opts_chunk$set(
   prompt = TRUE
 )
 
+# This is probably necessary on Linux (with Proxima Nova and Cairo
+# installed). We may need something else on Mac.
+if (toupper(Sys.info()["sysname"]) == "LINUX") {
+  knitr::opts_chunk$set(dev = c("cairo_pdf"))
+}
+
 if (require(xtable)) {
   options(xtable.comment = FALSE)
 }
@@ -58,6 +64,23 @@ if (require(formatR)) {
     tidy.opts = list(width.cutoff = 60)
   )
 }
+
+# Integrating with AAGIPalettes, AAGIThemes
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+if (!require(AAGIThemes)) {
+  remotes::install_github(
+    "AAGI-Org-AU-Public/AAGIThemes", dependencies = TRUE, upgrade = FALSE
+  )
+}
+if (!require(AAGIPalettes)) {
+  remotes::install_github(
+    "AAGI-Org-AU-Public/AAGIPalettes", dependencies = TRUE, upgrade = FALSE
+  )
+}
+library(AAGIThemes)
+library(AAGIPalettes)
 ```
 
 # Section 1
@@ -101,9 +124,10 @@ this .Rmd file (but feel free to change the title to whatever you like).
   that stand out on the page.
 \end{note}
 
-Example R code (produces Figure \@ref(fig:example1)).
+Example R code, using the `AAGIThemes` package to produce 
+Figure \@ref(fig:example1).
 ```{r example1, fig.cap="Here is a plot.", fig.pos="h", fig.height=3}
-plot(pressure)
+plot_aagi(pressure)
 ```
 
 ### This is a subsubsection heading
@@ -115,6 +139,5 @@ And so on.
 # Next Section
 
 Add as many sections as needed.
-
 
 # References
