@@ -71,12 +71,12 @@ if (!requireNamespace("remotes", quietly = TRUE)) {
 }
 if (!require(AAGIThemes)) {
   remotes::install_github(
-    "AAGI-Org-AU-Public/AAGIThemes", dependencies = TRUE, upgrade = FALSE
+    "AAGI-AUS/AAGIThemes", dependencies = TRUE, upgrade = FALSE
   )
 }
 if (!require(AAGIPalettes)) {
   remotes::install_github(
-    "AAGI-Org-AU-Public/AAGIPalettes", dependencies = TRUE, upgrade = FALSE
+    "AAGI-AUS/AAGIPalettes", dependencies = TRUE, upgrade = FALSE
   )
 }
 library(AAGIThemes)
