@@ -32,3 +32,10 @@ The AAGI report/presentation templates for Microsoft Word and Microsoft PowerPoi
 If the templates are found successfully, then these AAGI report templates should be available under the 'Personal' tab when creating a new document in Microsoft Word (and also when creating a new presentation in Microsoft PowerPoint).
 |<img src="templates_install_step3word.jpg" alt="Microsoft Word report templates jpg" width="300px"/>|<img src="templates_install_step3ppt.jpg" alt="Microsoft PowerPoint presentation templates jpg" width="300px"/>|
 |:-:|:-:|
+
+## Logo Rights
+
+Note that the logo of the AAGI project and the logos for the GRDC and AAGI strategic partners do not fall under the MIT License.
+AAGI retains full rights to the AGGI logo. The GRDC and the AAGI strategic partners&mdash;Curtin University, the University of Queensland and the University of Adelaide/Adelaide University&mdash;retain full rights to their own logos respectively.
+
+![](inst/rmarkdown/templates/PowerPoint_presentation/assets/partners.jpg)
