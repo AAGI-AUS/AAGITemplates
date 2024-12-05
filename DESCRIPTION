@@ -3,7 +3,7 @@ Package: AAGITemplates
 Title: Add AAGI Templates to `New Rmarkdown` Window
 Version: 0.6.0
 Authors@R: c(
-    person("Sam", "Rogers", email = "sam.rogers@adelaide.edu.au", role = "cre"),
+    person("Sam", "Rogers", email = "sam.rogers@adelaide.edu.au", role = c("cre", "aut"),
     person("Julian", "Taylor", email = "julian.taylor@adelaide.edu.au", role = "aut"),
     person("Russell", "Edson", email = "russell.edson@adelaide.edu.au", role = "aut")
     )
