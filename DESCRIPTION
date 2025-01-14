@@ -3,9 +3,12 @@ Package: AAGITemplates
 Title: Add AAGI Templates to `New Rmarkdown` Window
 Version: 0.6.0
 Authors@R: c(
-    person("Sam", "Rogers", , "sam.rogers@adelaide.edu.au", role = "cre"),
-    person("Julian", "Taylor", , "julian.taylor@adelaide.edu.au", role = "aut"),
-    person("Russell", "Edson", , "russell.edson@adelaide.edu.au", role = "aut")
+    person("Sam", "Rogers", , "sam.rogers@adelaide.edu.au", role = "aut",
+           comment = c(ORCID = "0000-0002-4607-5396")),
+    person("Julian", "Taylor", , "julian.taylor@adelaide.edu.au", role = "aut",
+           comment = c(ORCID = "0000-0002-9145-052X")),
+    person("Russell", "Edson", , "russell.edson@adelaide.edu.au", role = "aut",
+           comment = c(ORCID = "0000-0002-4607-5396"))
   )
 Description: Clicking the RStudio New Rmarkdown button shows a window
     where various Rmarkdown templates can be selected. This package adds
