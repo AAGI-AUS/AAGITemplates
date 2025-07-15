@@ -12,6 +12,28 @@ Rmarkdown, LaTeX and Knitr reporting templates for AAGI staff.
 
 This package adds templates for AAGI reports and presentations to RStudio, accessible graphically via the `File > New File... > R Markdown...` menu and also via the R Console using the `new_report()` function.
 
+## Installation instructions
+
+{AAGITemplates} is available through the [R-Universe](https://r-universe.dev/search) with pre-built binaries (this is the easy way).
+
+To get started:
+
+### Enable this universe
+
+```r
+options(repos = c(
+    aagi_aus = 'https://aagi-aus.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'))
+```
+
+### Install
+
+```r
+install.packages("AAGITemplates")
+```
+
+### The hard(er) way
+
 Install this R package with:
 
 ```{r eval = FALSE}
@@ -20,6 +42,7 @@ remotes::install_github("AAGI-AUS/AAGITemplates", upgrade = FALSE)
 ```
 
 ## Installing the Microsoft Office templates
+
 The AAGI report/presentation templates for Microsoft Word and Microsoft PowerPoint can be installed easily on a Windows 10/11 SOE by the following steps.
 
 1. Download the .dotx and .potx template files from this GitHub directory to your machine (e.g., by clicking the following links):
